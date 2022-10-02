@@ -1,9 +1,10 @@
+pub mod data;
 pub(crate) mod deserializer;
 mod serializer;
 
-#[derive(serde::Deserialize, serde::Serialize)]
+#[derive(Default)]
 pub struct Save {
-
+    pub resources: data::Resources,
 }
 impl Save {
     
