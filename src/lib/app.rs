@@ -1,9 +1,21 @@
+use std::{path::PathBuf, fs};
+
+use rfd::FileDialog;
+
+use super::save_file_utils::{Save, self};
+
 /// We derive Deserialize/Serialize so we can persist app state on shutdown.
 #[derive(serde::Deserialize, serde::Serialize)]
 #[serde(default)] // if we add new fields, give them default values when deserializing old state
 pub struct TemplateApp {
+    //the path to the current file being edited
+    sav_file_path: Option<PathBuf>,
+    #[serde(skip)]
+    sav_data: Option<Save>,
+
     // Example stuff:
     label: String,
+    
 
     // this how you opt-out of serialization of a member
     #[serde(skip)]
@@ -13,6 +25,8 @@ pub struct TemplateApp {
 impl Default for TemplateApp {
     fn default() -> Self {
         Self {
+            sav_file_path: None,
+            sav_data: None,
             // Example stuff:
             label: "Hello World!".to_owned(),
             value: 2.7,
@@ -45,7 +59,7 @@ impl eframe::App for TemplateApp {
     /// Called each time the UI needs repainting, which may be many times per second.
     /// Put your widgets into a `SidePanel`, `TopPanel`, `CentralPanel`, `Window` or `Area`.
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
-        let Self { label, value } = self;
+        let Self { sav_file_path,sav_data: sav_file, label, value } = self;
 
         // Examples of how to create different panels and windows.
         // Pick whichever suits you.
@@ -59,6 +73,22 @@ impl eframe::App for TemplateApp {
                 ui.menu_button("File", |ui| {
                     if ui.button("Quit").clicked() {
                         _frame.close();
+                    }
+                    if ui.button("Open File").clicked() {
+                        //open a file dialog with rfd
+                        self.sav_file_path = FileDialog::new()
+                            .add_filter("saves", &["sav"])
+                            .set_directory("~/").pick_file();
+
+                        //if sav_file_path is a valid path to a file with a .sav extension, make a backup of it, and send it to save_file::deserializer to be broken up.
+                        if let Some(file_path) = &self.sav_file_path {
+                            if file_path.exists() && (file_path.extension().is_some() && file_path.extension().unwrap().eq_ignore_ascii_case("sav")) { // the last two expressions should be replaced with is_some_and() later
+                                //create backup
+                                fs::copy(file_path, { let mut new_path = file_path.clone(); new_path.set_extension("sav.old"); new_path }).expect("Error creating backup");
+                                //send to deserializer
+                                self.sav_data = Some(save_file_utils::deserializer::deserialize(file_path));
+                            }
+                        }
                     }
                 });
             });
