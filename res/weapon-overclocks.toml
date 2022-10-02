@@ -1,0 +1,1698 @@
+[driller]
+    [[driller.weapons]]
+    name = "Experimental Plasma Charger"
+        [[driller.weapons.overclocks]]
+        name = "Heat Pipe"
+        guid = "A0E018C45FE679418FD3730E6E9B631D"
+            [driller.weapons.overclocks.cost]
+            credits = 7450
+            bismor  = 60
+            croppa  = 0
+            enor    = 0
+            jadiz   = 95
+            magnite = 0
+            umanite = 125
+        [[driller.weapons.overclocks]]
+        name = "Overcharger"
+        guid = "55BB52A0ECFA7C43B37BBBE640114196"
+            [driller.weapons.overclocks.cost]
+            credits = 7050
+            bismor  = 120
+            croppa  = 95
+            enor    = 60
+            jadiz   = 0
+            magnite = 0
+            umanite = 0
+        [[driller.weapons.overclocks]]
+        name = "Energy Rerouting"
+        guid = "97822071D586CE45ACD6489782B700FA"
+            [driller.weapons.overclocks.cost]
+            credits = 7300
+            bismor  = 130
+            croppa  = 0
+            enor    = 0
+            jadiz   = 100
+            magnite = 0
+            umanite = 65
+        [[driller.weapons.overclocks]]
+        name = "Magnetic Cooling Unit"
+        guid = "F1E6CC307C11DE4586B88B419E530ABF"
+            [driller.weapons.overclocks.cost]
+            credits = 8900
+            bismor  = 0
+            croppa  = 95
+            enor    = 0
+            jadiz   = 80
+            magnite = 0
+            umanite = 125
+        [[driller.weapons.overclocks]]
+        name = "Heavy Hitter"
+        guid = "39E43E13CC0DAE4691DD51A11383E9E1"
+            [driller.weapons.overclocks.cost]
+            credits = 8100
+            bismor  = 140
+            croppa  = 0
+            enor    = 0
+            jadiz   = 0
+            magnite = 60
+            umanite = 105
+        [[driller.weapons.overclocks]]
+        name = "Persistent Plasma"
+        guid = "165CD93E660B8147BCA2F86CDE5CF8F7"
+            [driller.weapons.overclocks.cost]
+            credits = 8150
+            bismor  = 0
+            croppa  = 75
+            enor    = 0
+            jadiz   = 130
+            magnite = 95
+            umanite = 0
+    [[driller.weapons]]
+    name = "Cryo Cannon"
+        [[driller.weapons.overclocks]]
+        name = "Improved Thermal Efficiency"
+        guid = "CE660C4DD9980043A802A17A4569C0AC"
+            [driller.weapons.overclocks.cost]
+            credits = 8350
+            bismor  = 0
+            croppa  = 125
+            enor    = 70
+            jadiz   = 0
+            magnite = 110
+            umanite = 0
+        [[driller.weapons.overclocks]]
+        name = "Perfectly Tuned Cooler"
+        guid = "6ADB23B3C8ED884086A88B8107C93CBE"
+            [driller.weapons.overclocks.cost]
+            credits = 8750
+            bismor  = 110
+            croppa  = 0
+            enor    = 0
+            jadiz   = 0
+            magnite = 65
+            umanite = 130
+        [[driller.weapons.overclocks]]
+        name = "Flow Rate Expansion"
+        guid = "88F8EAB206EC7B46A31C8F034B44931A"
+            [driller.weapons.overclocks.cost]
+            credits = 8900
+            bismor  = 0
+            croppa  = 0
+            enor    = 70
+            jadiz   = 100
+            magnite = 125
+            umanite = 0
+        [[driller.weapons.overclocks]]
+        name = "Ice Storm"
+        guid = "7B11755997B6564E97B1032A828EB90F"
+            [driller.weapons.overclocks.cost]
+            credits = 7200
+            bismor  = 0
+            croppa  = 0
+            enor    = 130
+            jadiz   = 0
+            magnite = 105
+            umanite = 75
+        [[driller.weapons.overclocks]]
+        name = "Ice Spear"
+        guid = "D518CB371A32A0449B345E4F58D34C91"
+            [driller.weapons.overclocks.cost]
+            credits = 8950
+            bismor  = 0
+            croppa  = 0
+            enor    = 60
+            jadiz   = 130
+            magnite = 0
+            umanite = 110
+        [[driller.weapons.overclocks]]
+        name = "Snowball"
+        guid = "C1F16F970C9C1047AF836BF6CBFEBCAD"
+            [driller.weapons.overclocks.cost]
+            credits = 8400
+            bismor  = 0
+            croppa  = 0
+            enor    = 0
+            jadiz   = 90
+            magnite = 70
+            umanite = 130
+    [[driller.weapons]]
+    name = "CRSPR Flamethrower"
+        [[driller.weapons.overclocks]]
+        name = "Compact Feed Valves"
+        guid = "71588D43A7589A4ABE61A8DE2EB449BF"
+            [driller.weapons.overclocks.cost]
+            credits = 7350
+            bismor  = 70
+            croppa  = 0
+            enor    = 0
+            jadiz   = 90
+            magnite = 0
+            umanite = 130
+        [[driller.weapons.overclocks]]
+        name = "Face Melter"
+        guid = "6431A8DDEAA6894B90C57BAC7552A5FF"
+            [driller.weapons.overclocks.cost]
+            credits = 7000
+            bismor  = 0
+            croppa  = 130
+            enor    = 70
+            jadiz   = 0
+            magnite = 90
+            umanite = 0
+        [[driller.weapons.overclocks]]
+        name = "Lighter Tanks"
+        guid = "C5057A9608CF5E4BA4AAB32AD613BA3E"
+            [driller.weapons.overclocks.cost]
+            credits = 7500
+            bismor  = 125
+            croppa  = 75
+            enor    = 0
+            jadiz   = 0
+            magnite = 0
+            umanite = 90
+        [[driller.weapons.overclocks]]
+        name = "Fuel Stream Diffuser"
+        guid = "19E85D1C3585B349B151779CBD7303D9"
+            [driller.weapons.overclocks.cost]
+            credits = 7100
+            bismor  = 100
+            croppa  = 0
+            enor    = 80
+            jadiz   = 125
+            magnite = 0
+            umanite = 0
+        [[driller.weapons.overclocks]]
+        name = "Sticky Fuel"
+        guid = "F28C3EE38A960D48965E9F69F56B3F19"
+            [driller.weapons.overclocks.cost]
+            credits = 8800
+            bismor  = 0
+            croppa  = 0
+            enor    = 110
+            jadiz   = 140
+            magnite = 75
+            umanite = 0
+        [[driller.weapons.overclocks]]
+        name = "Sticky Additive"
+        guid = "415F1D83A77E7A448DBF60383103FD6C"
+            [driller.weapons.overclocks.cost]
+            credits = 8250
+            bismor  = 80
+            croppa  = 0
+            enor    = 0
+            jadiz   = 130
+            magnite = 100
+            umanite = 0
+    [[driller.weapons]]
+    name = "Subata 120"
+        [[driller.weapons.overclocks]]
+        name = "Chain Hit"
+        guid = "A4AB7C627AF7FE4FA235E3AAC398ED1F"
+            [driller.weapons.overclocks.cost]
+            credits = 7300
+            bismor  = 0
+            croppa  = 0
+            enor    = 80
+            jadiz   = 110
+            magnite = 120
+            umanite = 0
+        [[driller.weapons.overclocks]]
+        name = "Oversized Magazine"
+        guid = "F13E20C4E74976438E85C237AE071830"
+            [driller.weapons.overclocks.cost]
+            credits = 9000
+            bismor  = 0
+            croppa  = 70
+            enor    = 0
+            jadiz   = 110
+            magnite = 0
+            umanite = 130
+        [[driller.weapons.overclocks]]
+        name = "Explosive Reload"
+        guid = "2949A3BE68EA2A4197D532AF80549101"
+            [driller.weapons.overclocks.cost]
+            credits = 8100
+            bismor  = 0
+            croppa  = 0
+            enor    = 95
+            jadiz   = 0
+            magnite = 65
+            umanite = 125
+        [[driller.weapons.overclocks]]
+        name = "Automatic Fire"
+        guid = "28A8E817E50A7346963E418BA08DFE18"
+            [driller.weapons.overclocks.cost]
+            credits = 7400
+            bismor  = 95
+            croppa  = 65
+            enor    = 120
+            jadiz   = 0
+            magnite = 0
+            umanite = 0
+        [[driller.weapons.overclocks]]
+        name = "Homebrew Powder"
+        guid = "D57B542FBC793542B6BB5617C1A67229"
+            [driller.weapons.overclocks.cost]
+            credits = 8100
+            bismor  = 95
+            croppa  = 0
+            enor    = 0
+            jadiz   = 140
+            magnite = 0
+            umanite = 65
+        [[driller.weapons.overclocks]]
+        name = "Tranquilizer Rounds"
+        guid = "587488BA77B28D4DA177400D995737A7"
+            [driller.weapons.overclocks.cost]
+            credits = 7150
+            bismor  = 0
+            croppa  = 95
+            enor    = 0
+            jadiz   = 135
+            magnite = 0
+            umanite = 75
+    [[driller.weapons]]
+    name = "Corrosive Sludge Pump"
+        [[driller.weapons.overclocks]]
+        name = "Disperser Compound"
+        guid = "C1D77A8BAFD433408E4A8397F1A63AEC"
+            [driller.weapons.overclocks.cost]
+            credits = 8800
+            bismor  = 0
+            croppa  = 0
+            enor    = 0
+            jadiz   = 135
+            magnite = 100
+            umanite = 60
+        [[driller.weapons.overclocks]]
+        name = "Goo Bomber Special"
+        guid = "4CCC7E994163A14AAAC97AB3777FF1F9"
+            [driller.weapons.overclocks.cost]
+            credits = 7450
+            bismor  = 0
+            croppa  = 0
+            enor    = 90
+            jadiz   = 140
+            magnite = 0
+            umanite = 65
+        [[driller.weapons.overclocks]]
+        name = "AG Mixture"
+        guid = "4956672BA68D3A439D4EC260F0B98CE4"
+            [driller.weapons.overclocks.cost]
+            credits = 7800
+            bismor  = 0
+            croppa  = 60
+            enor    = 0
+            jadiz   = 105
+            magnite = 0
+            umanite = 140
+        [[driller.weapons.overclocks]]
+        name = "Hydrogen Ion Additive"
+        guid = "ECCAB2551405F044A93FFB6C51FF9B39"
+            [driller.weapons.overclocks.cost]
+            credits = 8800
+            bismor  = 135
+            croppa  = 0
+            enor    = 100
+            jadiz   = 0
+            magnite = 0
+            umanite = 70
+        [[driller.weapons.overclocks]]
+        name = "Volatile Impact Mixture"
+        guid = "539F16D0ECA50447B21BD3B1ADD439CB"
+            [driller.weapons.overclocks.cost]
+            credits = 8500
+            bismor  = 120
+            croppa  = 0
+            enor    = 0
+            jadiz   = 75
+            magnite = 100
+            umanite = 0
+        [[driller.weapons.overclocks]]
+        name = "Sludge Blast"
+        guid = "EA7D273B56099B4B9F44768A099A8C1C"
+            [driller.weapons.overclocks.cost]
+            credits = 8200
+            bismor  = 0
+            croppa  = 0
+            enor    = 0
+            jadiz   = 100
+            magnite = 120
+            umanite = 60
+    [[driller.weapons]]
+    name = "Colette Wave Cooker"
+        [[driller.weapons.overclocks]]
+        name = "Liquid Cooling System"
+        guid = "5F614059B3ADA14E930831EF4B609802"
+            [driller.weapons.overclocks.cost]
+            credits = 7400
+            bismor  = 125
+            croppa  = 0
+            enor    = 0
+            jadiz   = 65
+            magnite = 0
+            umanite = 95
+        [[driller.weapons.overclocks]]
+        name = "Super Focus Lens"
+        guid = "79A870ED00C9814A942BE4AD49A10B63"
+            [driller.weapons.overclocks.cost]
+            credits = 7400
+            bismor  = 125
+            croppa  = 0
+            enor    = 0
+            jadiz   = 65
+            magnite = 0
+            umanite = 95
+        [[driller.weapons.overclocks]]
+        name = "Diffusion Ray"
+        guid = "0CD9E18B85E271449901D38D50BA62B4"
+            [driller.weapons.overclocks.cost]
+            credits = 8300
+            bismor  = 0
+            croppa  = 105
+            enor    = 0
+            jadiz   = 0
+            magnite = 130
+            umanite = 65
+        [[driller.weapons.overclocks]]
+        name = "Mega Power Supply"
+        guid = "A3E85790ABCBC74ABCCB3CC636509A1B"
+            [driller.weapons.overclocks.cost]
+            credits = 8100
+            bismor  = 0
+            croppa  = 95
+            enor    = 0
+            jadiz   = 0
+            magnite = 95
+            umanite = 140
+        [[driller.weapons.overclocks]]
+        name = "Blistering Necrosis"
+        guid = "48648832AA11E04DAE9F2E8ADF89AD8D"
+            [driller.weapons.overclocks.cost]
+            credits = 7850
+            bismor  = 70
+            croppa  = 130
+            enor    = 0
+            jadiz   = 0
+            magnite = 100
+            umanite = 0
+        [[driller.weapons.overclocks]]
+        name = "Gamma Contamination"
+        guid = "5EDD2987DB047F498ADD72FCEB6C1EE3"
+            [driller.weapons.overclocks.cost]
+            credits = 8350
+            bismor  = 100
+            croppa  = 0
+            enor    = 130
+            jadiz   = 0
+            magnite = 80
+            umanite = 0
+
+    
+[engineer]
+    [[engineer.weapons]]
+    name = "'Warthog' Auto 210"
+        [[engineer.weapons.overclocks]]
+        name = "Light-Weight Magazines"
+        guid = "CD4EEC38C029724E8317CCDC22D06057"
+            [engineer.weapons.overclocks.cost]
+            credits = 7250
+            bismor  = 0
+            croppa  = 125
+            enor    = 0
+            jadiz   = 0
+            magnite = 105
+            umanite = 60
+        [[engineer.weapons.overclocks]]
+        name = "Stunner"
+        guid = "338DD238332A2E4EA5490208AAD7F502"
+            [engineer.weapons.overclocks.cost]
+            credits = 7350
+            bismor  = 100
+            croppa  = 0
+            enor    = 0
+            jadiz   = 135
+            magnite = 60
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Mini Shells"
+        guid = "62D4C94C1367E8419691B677837DA4FB"
+            [engineer.weapons.overclocks.cost]
+            credits = 7700
+            bismor  = 0
+            croppa  = 125
+            enor    = 65
+            jadiz   = 0
+            magnite = 90
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Cycle Overload"
+        guid = "70122BA2FBDABF4895DC09C90294E685"
+            [engineer.weapons.overclocks.cost]
+            credits = 8050
+            bismor  = 125
+            croppa  = 100
+            enor    = 0
+            jadiz   = 0
+            magnite = 0
+            umanite = 80
+        [[engineer.weapons.overclocks]]
+        name = "Magnetic Pellet Alignment"
+        guid = "07E9279956BF9C418EEA313E2DC59F8D"
+            [engineer.weapons.overclocks.cost]
+            credits = 7900
+            bismor  = 0
+            croppa  = 0
+            enor    = 120
+            jadiz   = 105
+            magnite = 0
+            umanite = 75
+    [[engineer.weapons]]
+    name = "Deepcore 40mm PGL"
+        [[engineer.weapons.overclocks]]
+        name = "Pack Rat"
+        guid = "A97694E1A9B7484EB66E14DBF830DB6B"
+            [engineer.weapons.overclocks.cost]
+            credits = 7950
+            bismor  = 80
+            croppa  = 0
+            enor    = 105
+            jadiz   = 0
+            magnite = 120
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Compact Rounds"
+        guid = "EE5713FA91A0E245A1C0BFCE15212074"
+            [engineer.weapons.overclocks.cost]
+            credits = 7900
+            bismor  = 120
+            croppa  = 0
+            enor    = 100
+            jadiz   = 0
+            magnite = 0
+            umanite = 70
+        [[engineer.weapons.overclocks]]
+        name = "Fat Boy"
+        guid = "87D2434388D3FC45884E351DCBE70F7C"
+            [engineer.weapons.overclocks.cost]
+            credits = 8300
+            bismor  = 120
+            croppa  = 0
+            enor    = 70
+            jadiz   = 0
+            magnite = 105
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Clean Sweep"
+        guid = "B912059A3F86E44BA2985450D136CCB5"
+            [engineer.weapons.overclocks.cost]
+            credits = 8100
+            bismor  = 105
+            croppa  = 0
+            enor    = 70
+            jadiz   = 0
+            magnite = 0
+            umanite = 135
+        [[engineer.weapons.overclocks]]
+        name = "RJ250 Compound"
+        guid = "DB7EC788B46FCE4C9800A25010A0E8EA"
+            [engineer.weapons.overclocks.cost]
+            credits = 8800
+            bismor  = 65
+            croppa  = 0
+            enor    = 110
+            jadiz   = 0
+            magnite = 0
+            umanite = 120
+        [[engineer.weapons.overclocks]]
+        name = "Hyper Propellant"
+        guid = "BC4CD684621BF6449607373A534A574F"
+            [engineer.weapons.overclocks.cost]
+            credits = 8950
+            bismor  = 0
+            croppa  = 90
+            enor    = 0
+            jadiz   = 70
+            magnite = 130
+            umanite = 0
+    [[engineer.weapons]]
+    name = "Breach Cutter"
+        [[engineer.weapons.overclocks]]
+        name = "Light-Weight Cases"
+        guid = "96940C7CDCEFA84084DD4D60D2E81B2D"
+            [engineer.weapons.overclocks.cost]
+            credits = 8700
+            bismor  = 130
+            croppa  = 100
+            enor    = 0
+            jadiz   = 80
+            magnite = 0
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Stronger Plasma Current"
+        guid = "3D7C9C85F6D3A549A2D6EDB09918314B"
+            [engineer.weapons.overclocks.cost]
+            credits = 8650
+            bismor  = 0
+            croppa  = 100
+            enor    = 0
+            jadiz   = 140
+            magnite = 75
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "High Voltage Crossover"
+        guid = "7FA184CB9D21874D82BF9DDAFC7C91D7"
+            [engineer.weapons.overclocks.cost]
+            credits = 8250
+            bismor  = 120
+            croppa  = 0
+            enor    = 80
+            jadiz   = 0
+            magnite = 100
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Inferno"
+        guid = "8ED912F8267B844482EEDA86604451A5"
+            [engineer.weapons.overclocks.cost]
+            credits = 7550
+            bismor  = 0
+            croppa  = 70
+            enor    = 0
+            jadiz   = 90
+            magnite = 135
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Return to Sender"
+        guid = "744251ED25D4484AA38DFBDBF43BC5B9"
+            [engineer.weapons.overclocks.cost]
+            credits = 7950
+            bismor  = 140
+            croppa  = 0
+            enor    = 100
+            jadiz   = 0
+            magnite = 0
+            umanite = 80
+        [[engineer.weapons.overclocks]]
+        name = "Roll Control"
+        guid = "05DB2FA3B969E04F8644F5BE6C204020"
+            [engineer.weapons.overclocks.cost]
+            credits = 8150
+            bismor  = 0
+            croppa  = 95
+            enor    = 0
+            jadiz   = 0
+            magnite = 80
+            umanite = 135
+        [[engineer.weapons.overclocks]]
+        name = "Spinning Death"
+        guid = "340AFBC6C306044281013181E0026E1B"
+            [engineer.weapons.overclocks.cost]
+            credits = 7300
+            bismor  = 75
+            croppa  = 0
+            enor    = 0
+            jadiz   = 0
+            magnite = 95
+            umanite = 120
+    [[engineer.weapons]]
+    name = "'Stubby' Voltaic SMG"
+        [[engineer.weapons.overclocks]]
+        name = "Light-Weight Rounds"
+        guid = "05B157A075E0734BB471EF8DAE692865"
+            [engineer.weapons.overclocks.cost]
+            credits = 8700
+            bismor  = 90
+            croppa  = 0
+            enor    = 0
+            jadiz   = 65
+            magnite = 0
+            umanite = 135
+        [[engineer.weapons.overclocks]]
+        name = "Well Oiled Machine"
+        guid = "CE9490445B036B49B89DB2BC8D18FD12"
+            [engineer.weapons.overclocks.cost]
+            credits = 8400
+            bismor  = 0
+            croppa  = 65
+            enor    = 0
+            jadiz   = 95
+            magnite = 140
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "EM Refire Booster"
+        guid = "81B842310E01B847BF99774DBC3DC0DD"
+            [engineer.weapons.overclocks.cost]
+            credits = 8300
+            bismor  = 60
+            croppa  = 0
+            enor    = 90
+            jadiz   = 135
+            magnite = 0
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Super-Slim Rounds"
+        guid = "13CF1C4A6992924A9AFF5CEAF05B7106"
+            [engineer.weapons.overclocks.cost]
+            credits = 8550
+            bismor  = 90
+            croppa  = 130
+            enor    = 75
+            jadiz   = 0
+            magnite = 0
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Turret EM Discharge"
+        guid = "0C1BAA64B03CB94EBB77B7B55E7C6C87"
+            [engineer.weapons.overclocks.cost]
+            credits = 8450
+            bismor  = 80
+            croppa  = 0
+            enor    = 105
+            jadiz   = 125
+            magnite = 0
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Turret Arc"
+        guid = "3C42DBEA3021EE44AF6D944A91314D75"
+            [engineer.weapons.overclocks.cost]
+            credits = 8350
+            bismor  = 100
+            croppa  = 135
+            enor    = 0
+            jadiz   = 0
+            magnite = 0
+            umanite = 60
+    [[engineer.weapons]]
+    name = "LOK-1 Smart Rifle"
+        [[engineer.weapons.overclocks]]
+        name = "Armor Break Module"
+        guid = "B63D1376D90DDD4C986851D791E737AB"
+            [engineer.weapons.overclocks.cost]
+            credits = 7850
+            bismor  = 0
+            croppa  = 125
+            enor    = 0
+            jadiz   = 0
+            magnite = 90
+            umanite = 80
+        [[engineer.weapons.overclocks]]
+        name = "Eraser"
+        guid = "538A52E774FCB24C85E5F7F1CE63E3FA"
+            [engineer.weapons.overclocks.cost]
+            credits = 8000
+            bismor  = 0
+            croppa  = 135
+            enor    = 90
+            jadiz   = 0
+            magnite = 70
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Executioner"
+        guid = "8884ED69B093E44681F36C74FD1E772F"
+            [engineer.weapons.overclocks.cost]
+            credits = 8750
+            bismor  = 0
+            croppa  = 0
+            enor    = 130
+            jadiz   = 105
+            magnite = 65
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Explosive Chemical Rounds"
+        guid = "6FA83E783551F54A97BC04F09DF1A842"
+            [engineer.weapons.overclocks.cost]
+            credits = 8500
+            bismor  = 0
+            croppa  = 65
+            enor    = 0
+            jadiz   = 130
+            magnite = 95
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Seeker Rounds"
+        guid = "798B9546AB16B34CAD766DAB554150D9"
+            [engineer.weapons.overclocks.cost]
+            credits = 8150
+            bismor  = 60
+            croppa  = 0
+            enor    = 0
+            jadiz   = 0
+            magnite = 135
+            umanite = 95
+        [[engineer.weapons.overclocks]]
+        name = "Neuro-Lasso"
+        guid = "956BB51F4D8F254291A0C0E740BD07CF"
+            [engineer.weapons.overclocks.cost]
+            credits = 8950
+            bismor  = 0
+            croppa  = 125
+            enor    = 0
+            jadiz   = 0
+            magnite = 80
+            umanite = 100
+    [[engineer.weapons]]
+    name = "Shard Diffractor"
+        [[engineer.weapons.overclocks]]
+        name = "Efficiency Tweaks"
+        guid = "F1432F121F68E04DA0C5DD8E50CF717D"
+            [engineer.weapons.overclocks.cost]
+            credits = 7650
+            bismor  = 0
+            croppa  = 120
+            enor    = 0
+            jadiz   = 90
+            magnite = 70
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Automated Beam Controller"
+        guid = "71D81BC3DBC28F4D905A6C9F4A8B55AE"
+            [engineer.weapons.overclocks.cost]
+            credits = 8050
+            bismor  = 90
+            croppa  = 0
+            enor    = 0
+            jadiz   = 130
+            magnite = 65
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Feedback Loop"
+        guid = "F1880C6F7BEF10478E77EE4FC63481F6"
+            [engineer.weapons.overclocks.cost]
+            credits = 7200
+            bismor  = 0
+            croppa  = 0
+            enor    = 125
+            jadiz   = 0
+            magnite = 65
+            umanite = 100
+        [[engineer.weapons.overclocks]]
+        name = "Volatile Impact Reactor"
+        guid = "7BB7C21FA1D1E64A8C007CE6A023A412"
+            [engineer.weapons.overclocks.cost]
+            credits = 8300
+            bismor  = 65
+            croppa  = 0
+            enor    = 105
+            jadiz   = 0
+            magnite = 125
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Plascrete Catalyst"
+        guid = "D330723969BCE44CB1EBE9009A2F6E0D"
+            [engineer.weapons.overclocks.cost]
+            credits = 8300
+            bismor  = 65
+            croppa  = 0
+            enor    = 105
+            jadiz   = 0
+            magnite = 125
+            umanite = 0
+        [[engineer.weapons.overclocks]]
+        name = "Overdrive Booster"
+        guid = "187A18BA5283D24C905A37F4FB123BA0"
+            [engineer.weapons.overclocks.cost]
+            credits = 7900
+            bismor  = 120
+            croppa  = 110
+            enor    = 0
+            jadiz   = 75
+            magnite = 0
+            umanite = 0
+
+
+[gunner]
+    [[gunner.weapons]]
+    name = "'Thunderhead' Heavy Autocannon"
+        [[gunner.weapons.overclocks]]
+        name = "Big Bertha"
+        guid = "86AA0DD13FD37E43B2FBF176EE5DE815"
+            [gunner.weapons.overclocks.cost]
+            credits = 8400
+            bismor  = 125
+            croppa  = 105
+            enor    = 0
+            jadiz   = 0
+            magnite = 0
+            umanite = 80
+
+        [[gunner.weapons.overclocks]]
+        name = "Carpet Bomber"
+        guid = "8C0142A687637A4EA4CC8A7F84B9610A"
+            [gunner.weapons.overclocks.cost]
+            credits = 7350
+            bismor  = 0
+            croppa  = 120
+            enor    = 0
+            jadiz   = 0
+            magnite = 105
+            umanite = 70
+
+        [[gunner.weapons.overclocks]]
+        name = "Composite Drums"
+        guid = "01E23067CBB9A6428AE4394C99F1D2BB"
+            [gunner.weapons.overclocks.cost]
+            credits = 7850
+            bismor  = 0
+            croppa  = 135
+            enor    = 70
+            jadiz   = 0
+            magnite = 105
+            umanite = 0
+
+        [[gunner.weapons.overclocks]]
+        name = "Combat Mobility"
+        guid = "3DD5E8141C483E43AA3E0708CE75D663"
+            [gunner.weapons.overclocks.cost]
+            credits = 7650
+            bismor  = 0
+            croppa  = 70
+            enor    = 0
+            jadiz   = 120
+            magnite = 95
+            umanite = 0
+
+        [[gunner.weapons.overclocks]]
+        name = "Neurotoxin Payload"
+        guid = "32654E9478165E4DA3F0DBD33B180341"
+            [gunner.weapons.overclocks.cost]
+            credits = 8100
+            bismor  = 0
+            croppa  = 100
+            enor    = 0
+            jadiz   = 75
+            magnite = 135
+            umanite = 0
+
+        [[gunner.weapons.overclocks]]
+        name = "Splintering Shells"
+        guid = "CB83FD6C13C63F4982DC87B9796311C8"
+            [gunner.weapons.overclocks.cost]
+            credits = 7300
+            bismor  = 0
+            croppa  = 95
+            enor    = 0
+            jadiz   = 125
+            magnite = 65
+            umanite = 0
+    [[gunner.weapons]]
+    name = "BRT7 Burst Fire Gun"
+        [[gunner.weapons.overclocks]]
+        name = "Composite Casings"
+        guid = "6F26A8B49F967C4D999F734645EAE2C4"
+            [gunner.weapons.overclocks.cost]
+            credits = 7950
+            bismor  = 0
+            croppa  = 140
+            enor    = 75
+            jadiz   = 0
+            magnite = 100
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Compact Mags"
+        guid = "2FF3D4C92D59304592009FA2E39BFFC6"
+            [gunner.weapons.overclocks.cost]
+            credits = 7350
+            bismor  = 0
+            croppa  = 0
+            enor    = 0
+            jadiz   = 75
+            magnite = 135
+            umanite = 105
+        [[gunner.weapons.overclocks]]
+        name = "Electro Minelets"
+        guid = "4A4F93FE1AC31E41B897C1F1B264A672"
+            [gunner.weapons.overclocks.cost]
+            credits = 7450
+            bismor  = 0
+            croppa  = 0
+            enor    = 80
+            jadiz   = 95
+            magnite = 0
+            umanite = 120
+        [[gunner.weapons.overclocks]]
+        name = "Full Chamber Seal"
+        guid = "414916957AD3D0409B5FE3692A46DD19"
+            [gunner.weapons.overclocks.cost]
+            credits = 7850
+            bismor  = 120
+            croppa  = 0
+            enor    = 0
+            jadiz   = 75
+            magnite = 110
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Experimental Rounds"
+        guid = "88ABD40A78329942884C00D7F22DAC90"
+            [gunner.weapons.overclocks.cost]
+            credits = 8550
+            bismor  = 0
+            croppa  = 0
+            enor    = 100
+            jadiz   = 75
+            magnite = 130
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Micro Flechettes"
+        guid = "8F1C6A1A23A6DF4CBCA5510C4A19F221"
+            [gunner.weapons.overclocks.cost]
+            credits = 7650
+            bismor  = 80
+            croppa  = 0
+            enor    = 0
+            jadiz   = 100
+            magnite = 130
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Lead Spray"
+        guid = "F1AE55CF592E7746A0001D61584BDF2A"
+            [gunner.weapons.overclocks.cost]
+            credits = 8050
+            bismor  = 125
+            croppa  = 0
+            enor    = 0
+            jadiz   = 0
+            magnite = 75
+            umanite = 105
+    [[gunner.weapons]]
+    name = "Lead Storm' Powered Minigun"
+        [[gunner.weapons.overclocks]]
+        name = "Compact Feed Mechanism"
+        guid = "2E9FBFB43B7B554FB3728780F1334824"
+            [gunner.weapons.overclocks.cost]
+            credits = 7450
+            bismor  = 70
+            croppa  = 95
+            enor    = 0
+            jadiz   = 0
+            magnite = 130
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Thinned Drum Walls"
+        guid = "01D4653903832F498C50F7719D58E89B"
+            [gunner.weapons.overclocks.cost]
+            credits = 7650
+            bismor  = 0
+            croppa  = 75
+            enor    = 125
+            jadiz   = 95
+            magnite = 0
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Lead Storm"
+        guid = "7CD10E2C55583041B577141C854BEE62"
+            [gunner.weapons.overclocks.cost]
+            credits = 8800
+            bismor  = 0
+            croppa  = 0
+            enor    = 130
+            jadiz   = 100
+            magnite = 65
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Exhaust Vectoring"
+        guid = "FBB1014758606A41888E378F69E3CD61"
+            [gunner.weapons.overclocks.cost]
+            credits = 7400
+            bismor  = 140
+            croppa  = 95
+            enor    = 0
+            jadiz   = 0
+            magnite = 65
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "A Little More Oomph!"
+        guid = "B55D6170EEA5D743AC4B28293C0C4673"
+            [gunner.weapons.overclocks.cost]
+            credits = 8700
+            bismor  = 120
+            croppa  = 0
+            enor    = 0
+            jadiz   = 0
+            magnite = 95
+            umanite = 75
+        [[gunner.weapons.overclocks]]
+        name = "Burning Hell"
+        guid = "63156673F2174F449F598F8729AC0C65"
+            [gunner.weapons.overclocks.cost]
+            credits = 8700
+            bismor  = 0
+            croppa  = 110
+            enor    = 0
+            jadiz   = 0
+            magnite = 140
+            umanite = 65
+        [[gunner.weapons.overclocks]]
+        name = "Bullet Hell"
+        guid = "ED4036806A69E848BC72DDE3CDEAC456"
+            [gunner.weapons.overclocks.cost]
+            credits = 7600
+            bismor  = 0
+            croppa  = 0
+            enor    = 105
+            jadiz   = 0
+            magnite = 140
+            umanite = 75
+    [[gunner.weapons]]
+    name = "'Bulldog' Heavy Revolver"
+        [[gunner.weapons.overclocks]]
+        name = "Six Shooter"
+        guid = "A937DC3938DEE8418CD0641CCE19B46A"
+            [gunner.weapons.overclocks.cost]
+            credits = 7750
+            bismor  = 120
+            croppa  = 60
+            enor    = 0
+            jadiz   = 0
+            magnite = 100
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Elephant Rounds"
+        guid = "D53F94FBC05E0448B57BC9DF6846267B"
+            [gunner.weapons.overclocks.cost]
+            credits = 7300
+            bismor  = 0
+            croppa  = 0
+            enor    = 140
+            jadiz   = 0
+            magnite = 90
+            umanite = 65
+        [[gunner.weapons.overclocks]]
+        name = "Chain Hit"
+        guid = "5885A33B15AE844591A66B65A2E5494E"
+            [gunner.weapons.overclocks.cost]
+            credits = 7300
+            bismor  = 0
+            croppa  = 0
+            enor    = 80
+            jadiz   = 110
+            magnite = 120
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Magic Bullets"
+        guid = "DB02B4E77D43BF44A4749982C0879B77"
+            [gunner.weapons.overclocks.cost]
+            credits = 8750
+            bismor  = 0
+            croppa  = 105
+            enor    = 0
+            jadiz   = 0
+            magnite = 130
+            umanite = 75
+        [[gunner.weapons.overclocks]]
+        name = "Homebrew Powder"
+        guid = "CD6993F938E27C49AC69293BF942A8F0"
+            [gunner.weapons.overclocks.cost]
+            credits = 8100
+            bismor  = 95
+            croppa  = 0
+            enor    = 0
+            jadiz   = 140
+            magnite = 0
+            umanite = 65
+        [[gunner.weapons.overclocks]]
+        name = "Volatile Bullets"
+        guid = "D1306CBC8421B248A4B95B332DF3E056"
+            [gunner.weapons.overclocks.cost]
+            credits = 7350
+            bismor  = 0
+            croppa  = 130
+            enor    = 0
+            jadiz   = 110
+            magnite = 60
+            umanite = 0
+    [[gunner.weapons]]
+    name = "'Hurricane' Guided Rocket System"
+        [[gunner.weapons.overclocks]]
+        name = "Fragmentation Missiles"
+        guid = "1E41880C9E18FC439B82B69F19F0A191"
+            [gunner.weapons.overclocks.cost]
+            credits = 7150
+            bismor  = 100
+            croppa  = 135
+            enor    = 0
+            jadiz   = 60
+            magnite = 0
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Salvo Module"
+        guid = "52DE47B5A2579E418564F19382240866"
+            [gunner.weapons.overclocks.cost]
+            credits = 8650
+            bismor  = 0
+            croppa  = 0
+            enor    = 65
+            jadiz   = 110
+            magnite = 0
+            umanite = 130
+        [[gunner.weapons.overclocks]]
+        name = "Manual Guidance Cutoff"
+        guid = "8E6816C3DAEE2C49B93E8FA67CF13B1A"
+            [gunner.weapons.overclocks.cost]
+            credits = 7050
+            bismor  = 75
+            croppa  = 0
+            enor    = 0
+            jadiz   = 105
+            magnite = 0
+            umanite = 130
+        [[gunner.weapons.overclocks]]
+        name = "Jet Fuel Homebrew"
+        guid = "C24639FB04A00949BE8F00CD38462B84"
+            [gunner.weapons.overclocks.cost]
+            credits = 7250
+            bismor  = 70
+            croppa  = 0
+            enor    = 0
+            jadiz   = 130
+            magnite = 0
+            umanite = 100
+        [[gunner.weapons.overclocks]]
+        name = "Minelayer System"
+        guid = "C873E29A463E4F4DAD4821D92BC31FB4"
+            [gunner.weapons.overclocks.cost]
+            credits = 7500
+            bismor  = 80
+            croppa  = 125
+            enor    = 90
+            jadiz   = 0
+            magnite = 0
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Plasma Burster Missiles"
+        guid = "01CD9AAD2398FB46818A3F6F6A96384A"
+            [gunner.weapons.overclocks.cost]
+            credits = 8500
+            bismor  = 0
+            croppa  = 105
+            enor    = 80
+            jadiz   = 0
+            magnite = 0
+            umanite = 140
+        [[gunner.weapons.overclocks]]
+        name = "Overtuned Feed Mechanism"
+        guid = "2A257648DF688844BA3DB091A3756BA5"
+            [gunner.weapons.overclocks.cost]
+            credits = 8950
+            bismor  = 0
+            croppa  = 65
+            enor    = 0
+            jadiz   = 105
+            magnite = 130
+            umanite = 0
+    [[gunner.weapons]]
+    name = "Armskore Coil Gun"
+        [[gunner.weapons.overclocks]]
+        name = "Re-atomizer"
+        guid = "8C5D24BD68D5F14A89A6B87A857CCD9B"
+            [gunner.weapons.overclocks.cost]
+            credits = 7750
+            bismor  = 90
+            croppa  = 0
+            enor    = 0
+            jadiz   = 65
+            magnite = 135
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Ultra-Magnetic Coils"
+        guid = "26841EB5823A284B81BF7DA3792708D7"
+            [gunner.weapons.overclocks.cost]
+            credits = 7900
+            bismor  = 0
+            croppa  = 0
+            enor    = 125
+            jadiz   = 70
+            magnite = 110
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Backfeeding Module"
+        guid = "F82F326576E8A74899753CB6316B7C20"
+            [gunner.weapons.overclocks.cost]
+            credits = 8100
+            bismor  = 125
+            croppa  = 0
+            enor    = 0
+            jadiz   = 105
+            magnite = 70
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "The Mole"
+        guid = "56471F219BE014448DFE5F087CABD447"
+            [gunner.weapons.overclocks.cost]
+            credits = 8100
+            bismor  = 70
+            croppa  = 0
+            enor    = 95
+            jadiz   = 125
+            magnite = 0
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Hellfire"
+        guid = "80DEA90AD5F3174695138FF47A32A96A"
+            [gunner.weapons.overclocks.cost]
+            credits = 8700
+            bismor  = 0
+            croppa  = 125
+            enor    = 80
+            jadiz   = 100
+            magnite = 0
+            umanite = 0
+        [[gunner.weapons.overclocks]]
+        name = "Triple-tech Chambers"
+        guid = "A6751DA1B87C134EBC5710C7431C1453"
+            [gunner.weapons.overclocks.cost]
+            credits = 8500
+            bismor  = 70
+            croppa  = 125
+            enor    = 0
+            jadiz   = 100
+            magnite = 95
+            umanite = 0
+    
+
+[scout]
+    [[scout.weapons]]
+    name = "Deepcore GK2"
+        [[scout.weapons.overclocks]]
+        name = "Compact Ammo"
+        guid = "AF945B93A7B9D64CA6DD00683627BC80"
+            [scout.weapons.overclocks.cost]
+            credits = 7250
+            bismor  = 125
+            croppa  = 0
+            enor    = 80
+            jadiz   = 105
+            magnite = 0
+            umanite = 0
+
+        [[scout.weapons.overclocks]]
+        name = "Electrifying Reload"
+        guid = "FF94B9E7834D774292DACCCA3EA023B9"
+            [scout.weapons.overclocks.cost]
+            credits = 7750
+            bismor  = 105
+            croppa  = 0
+            enor    = 0
+            jadiz   = 0
+            magnite = 65
+            umanite = 135
+
+        [[scout.weapons.overclocks]]
+        name = "AI Stability Engine"
+        guid = "11F123E174103140957957506BD576D7"
+            [scout.weapons.overclocks.cost]
+            credits = 8250
+            bismor  = 0
+            croppa  = 60
+            enor    = 125
+            jadiz   = 0
+            magnite = 0
+            umanite = 100
+
+        [[scout.weapons.overclocks]]
+        name = "Homebrew Powder"
+        guid = "4CDF41F3A0F8E4499D1BAC6168347799"
+            [scout.weapons.overclocks.cost]
+            credits = 8100
+            bismor  = 95
+            croppa  = 0
+            enor    = 0
+            jadiz   = 140
+            magnite = 0
+            umanite = 65 
+
+        [[scout.weapons.overclocks]]
+        name = "Overclocked Firing Mechanism"
+        guid = "C3060324CE482C4AB6DC44ED498CBA39"
+            [scout.weapons.overclocks.cost]
+            credits = 7950
+            bismor  = 95
+            croppa  = 0
+            enor    = 120
+            jadiz   = 0
+            magnite = 65
+            umanite = 0
+
+        [[scout.weapons.overclocks]]
+        name = "Gas Rerouting"
+        guid = "F6E2E547F2EB674DBDA591F47DE6D017"
+            [scout.weapons.overclocks.cost]
+            credits = 7800
+            bismor  = 0
+            croppa  = 60
+            enor    = 0
+            jadiz   = 125
+            magnite = 105
+            umanite = 0
+
+        [[scout.weapons.overclocks]]
+        name = "Bullets of Mercy"
+        guid = "7306221F1264B04B8C025DB4DE9D1667"
+            [scout.weapons.overclocks.cost]
+            credits = 8100
+            bismor  = 90
+            croppa  = 80
+            enor    = 0
+            jadiz   = 0
+            magnite = 125
+            umanite = 0
+    [[scout.weapons]]
+    name = "M1000 Classic"
+        [[scout.weapons.overclocks]]
+        name = "Minimal Clips"
+        guid = "D006E3EEE0540242A2B0BCA8ABCDB387"
+            [scout.weapons.overclocks.cost]
+            credits = 8200
+            bismor  = 0
+            croppa  = 0
+            enor    = 95
+            jadiz   = 130
+            magnite = 75
+            umanite = 0
+        [[scout.weapons.overclocks]]
+        name = "Supercooling Chamber"
+        guid = "1073CEEBECBC014E8370E259040EB71C"
+            [scout.weapons.overclocks.cost]
+            credits = 8500
+            bismor  = 0
+            croppa  = 0
+            enor    = 90
+            jadiz   = 130
+            magnite = 70
+            umanite = 0
+        [[scout.weapons.overclocks]]
+        name = "Electrocuting Focus Shots"
+        guid = "AAC9B6E4458458478E50DB87324097EB"
+            [scout.weapons.overclocks.cost]
+            credits = 8850
+            bismor  = 120
+            croppa  = 95
+            enor    = 0
+            jadiz   = 0
+            magnite = 0
+            umanite = 75
+        [[scout.weapons.overclocks]]
+        name = "Hipster"
+        guid = "2A12358F750B704996C37D467ECF1D36"
+            [scout.weapons.overclocks.cost]
+            credits = 8900
+            bismor  = 0
+            croppa  = 125
+            enor    = 105
+            jadiz   = 0
+            magnite = 0
+            umanite = 80
+        [[scout.weapons.overclocks]]
+        name = "Hoverclock"
+        guid = "8A0122E44E42104BAAAD6B4534A9DE8F"
+            [scout.weapons.overclocks.cost]
+            credits = 7350
+            bismor  = 105
+            croppa  = 135
+            enor    = 0
+            jadiz   = 65
+            magnite = 0
+            umanite = 0
+        [[scout.weapons.overclocks]]
+        name = "Active Stability System"
+        guid = "D1544B3528938A48964E8D9A6309D1DA"
+            [scout.weapons.overclocks.cost]
+            credits = 8150
+            bismor  = 90
+            croppa  = 0
+            enor    = 0
+            jadiz   = 0
+            magnite = 70
+            umanite = 135
+    [[scout.weapons]]
+    name = "Zhukov NUK17"
+        [[scout.weapons.overclocks]]
+        name = "Cryo Minelets"
+        guid = "43CD8D27EAEAAA4A8E6DC43E0438A10C"
+            [scout.weapons.overclocks.cost]
+            credits = 7300
+            bismor  = 0
+            croppa  = 65
+            enor    = 0
+            jadiz   = 0
+            magnite = 135
+            umanite = 95
+        [[scout.weapons.overclocks]]
+        name = "Custom Casings"
+        guid = "24A286C31F45EA469A20102AF4D741D3"
+            [scout.weapons.overclocks.cost]
+            credits = 7700
+            bismor  = 95
+            croppa  = 75
+            enor    = 140
+            jadiz   = 0
+            magnite = 0
+            umanite = 0
+        [[scout.weapons.overclocks]]
+        name = "Gas Recycling"
+        guid = "828B2BBC50EC424385EFD00EA6854597"
+            [scout.weapons.overclocks.cost]
+            credits = 7800
+            bismor  = 0
+            croppa  = 0
+            enor    = 70
+            jadiz   = 105
+            magnite = 125
+            umanite = 0
+        [[scout.weapons.overclocks]]
+        name = "Embedded Detonators"
+        guid = "FAF35071BA63B2429855FBC8A09BFFD0"
+            [scout.weapons.overclocks.cost]
+            credits = 7550
+            bismor  = 0
+            croppa  = 0
+            enor    = 0
+            jadiz   = 135
+            magnite = 65
+            umanite = 90
+        [[scout.weapons.overclocks]]
+        name = "Minimal Magazines"
+        guid = "98A0452B235402459CFF5CC3B34CCC69"
+            [scout.weapons.overclocks.cost]
+            credits = 8450
+            bismor  = 130
+            croppa  = 100
+            enor    = 0
+            jadiz   = 70
+            magnite = 0
+            umanite = 0
+    [[scout.weapons]]
+    name = "Jury-Rigged Boomstick"
+        [[scout.weapons.overclocks]]
+        name = "Shaped Shells"
+        guid = "EF0CAC2AEF57BD41A72155B4DA395D47"
+            [scout.weapons.overclocks.cost]
+            credits = 7700
+            bismor  = 95
+            croppa  = 0
+            enor    = 70
+            jadiz   = 135
+            magnite = 0
+            umanite = 0
+        [[scout.weapons.overclocks]]
+        name = "Jumbo Shells"
+        guid = "0B1A2EC60168C54E9E47CA764C3B70BD"
+            [scout.weapons.overclocks.cost]
+            credits = 8800
+            bismor  = 65
+            croppa  = 0
+            enor    = 105
+            jadiz   = 125
+            magnite = 0
+            umanite = 0
+        [[scout.weapons.overclocks]]
+        name = "Stuffed Shells"
+        guid = "3F68CB7C2FAB2843B1446D133BD92C1D"
+            [scout.weapons.overclocks.cost]
+            credits = 7850
+            bismor  = 100
+            croppa  = 0
+            enor    = 135
+            jadiz   = 0
+            magnite = 0
+            umanite = 80
+        [[scout.weapons.overclocks]]
+        name = "Double Barrel"
+        guid = "5F090BB3EFC96F4297F1BFC3F152C663"
+            [scout.weapons.overclocks.cost]
+            credits = 7950
+            bismor  = 0
+            croppa  = 100
+            enor    = 75
+            jadiz   = 0
+            magnite = 0
+            umanite = 125
+        [[scout.weapons.overclocks]]
+        name = "Compact Shells"
+        guid = "FA40EE4A1F8CB04FBFAF916469E4B167"
+            [scout.weapons.overclocks.cost]
+            credits = 8550
+            bismor  = 0
+            croppa  = 0
+            enor    = 0
+            jadiz   = 100
+            magnite = 65
+            umanite = 120
+        [[scout.weapons.overclocks]]
+        name = "Special Powder"
+        guid = "E6DAF7D6065004439EF966D6FDBD69A6"
+            [scout.weapons.overclocks.cost]
+            credits = 7050
+            bismor  = 95
+            croppa  = 125
+            enor    = 65
+            jadiz   = 0
+            magnite = 0
+            umanite = 0
+    [[scout.weapons]]
+    name = "DRAK-25 Plasma Carbine"
+        [[scout.weapons.overclocks]]
+        name = "Rewiring Mod"
+        guid = "5ABF1C487BF3BD4BAFDAF2A4428720EC"
+            [scout.weapons.overclocks.cost]
+            credits = 8200
+            bismor  = 130
+            croppa  = 65
+            enor    = 0
+            jadiz   = 110
+            magnite = 0
+            umanite = 0
+        [[scout.weapons.overclocks]]
+        name = "Impact Deflection"
+        guid = "1BD74059739E094BBE0A3B79F2E94B46"
+            [scout.weapons.overclocks.cost]
+            credits = 7950
+            bismor  = 0
+            croppa  = 60
+            enor    = 0
+            jadiz   = 140
+            magnite = 0
+            umanite = 105
+        [[scout.weapons.overclocks]]
+        name = "Thermal Liquid Coolant"
+        guid = "00EA09DA14DA7646982DD5A1B2467A08"
+            [scout.weapons.overclocks.cost]
+            credits = 8100
+            bismor  = 75
+            croppa  = 0
+            enor    = 105
+            jadiz   = 0
+            magnite = 0
+            umanite = 130
+        [[scout.weapons.overclocks]]
+        name = "Thermal Exhaust Feedback"
+        guid = "BFFE0C3436AC584D890B6EFE9124AAF1"
+            [scout.weapons.overclocks.cost]
+            credits = 7500
+            bismor  = 140
+            croppa  = 0
+            enor    = 0
+            jadiz   = 100
+            magnite = 0
+            umanite = 75
+        [[scout.weapons.overclocks]]
+        name = "Overtuned Particle Accelerator"
+        guid = "9225769777355041BDEB70CACD946A27"
+            [scout.weapons.overclocks.cost]
+            credits = 7200
+            bismor  = 100
+            croppa  = 0
+            enor    = 0
+            jadiz   = 65
+            magnite = 120
+            umanite = 0
+        [[scout.weapons.overclocks]]
+        name = "Aggressive Venting"
+        guid = "D831B000F2A2C84C8749A5B182348574"
+            [scout.weapons.overclocks.cost]
+            credits = 8000
+            bismor  = 130
+            croppa  = 95
+            enor    = 80
+            jadiz   = 0
+            magnite = 0
+            umanite = 0
+        [[scout.weapons.overclocks]]
+        name = "Shield Battery Booster"
+        guid = "532714B803867C4F8AA6EA78FA4EAAEA"
+            [scout.weapons.overclocks.cost]
+            credits = 8850
+            bismor  = 65
+            croppa  = 0
+            enor    = 0
+            jadiz   = 120
+            magnite = 105
+            umanite = 0
+    [[scout.weapons]]
+    name = "Nishanka Boltshark X-80"
+        [[scout.weapons.overclocks]]
+        name = "Quick Fire"
+        guid = "1CFA57FA35D0DB49A9AAF87CAA011EF4"
+            [scout.weapons.overclocks.cost]
+            credits = 8400
+            bismor  = 0
+            croppa  = 95
+            enor    = 0
+            jadiz   = 0
+            magnite = 0
+            umanite = 125
+        [[scout.weapons.overclocks]]
+        name = "The Specialist"
+        guid = "6C464531820EA849BB3C80C0F190A74F"
+            [scout.weapons.overclocks.cost]
+            credits = 7900
+            bismor  = 0
+            croppa  = 65
+            enor    = 0
+            jadiz   = 0
+            magnite = 130
+            umanite = 90
+        [[scout.weapons.overclocks]]
+        name = "Cryo Bolt"
+        guid = "75CFD0A90F31C94A9D6A8D02147DE1FC"
+            [scout.weapons.overclocks.cost]
+            credits = 7350
+            bismor  = 0
+            croppa  = 75
+            enor    = 0
+            jadiz   = 0
+            magnite = 135
+            umanite = 105
+        [[scout.weapons.overclocks]]
+        name = "Fire Bolt"
+        guid = "DDCA81E29C6BE8488C2DF4F0B0C72A72"
+            [scout.weapons.overclocks.cost]
+            credits = 7100
+            bismor  = 0
+            croppa  = 90
+            enor    = 0
+            jadiz   = 0
+            magnite = 70
+            umanite = 130
+        [[scout.weapons.overclocks]]
+        name = "Bodkin Points"
+        guid = "AECB0F241DFA194AB04BBB86563FA840"
+            [scout.weapons.overclocks.cost]
+            credits = 8400
+            bismor  = 0
+            croppa  = 110
+            enor    = 0
+            jadiz   = 80
+            magnite = 140
+            umanite = 0
+        [[scout.weapons.overclocks]]
+        name = "Trifork Volley"
+        guid = "62FE96DE32A5454EB0F1952BD68DBAF4"
+            [scout.weapons.overclocks.cost]
+            credits = 7650
+            bismor  = 130
+            croppa  = 0
+            enor    = 0
+            jadiz   = 100
+            magnite = 65
+            umanite = 0
+
