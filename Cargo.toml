@@ -1,8 +1,11 @@
 [package]
-name = "rust-DRG-Save-Editor"
+name = "rust_drg_save_editor"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+druid = "0.7.0"
+serde = "1.0.145"
+toml = "0.5.9"
