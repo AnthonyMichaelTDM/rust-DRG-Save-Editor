@@ -2,77 +2,115 @@ use std::{path::PathBuf, fs};
 
 use rfd::FileDialog;
 
-use super::{save_file_utils::{Save, self}, widgets::val_text};
+use super::{save_file_utils::{Save, self}, gui::widgets::val_text::ValText};
 
-/// We derive Deserialize/Serialize so we can persist app state on shutdown.
-#[derive(serde::Deserialize, serde::Serialize)]
-#[serde(default)] // if we add new fields, give them default values when deserializing old state
-pub struct TemplateApp {
+pub struct Application<> {
     //the path to the current file being edited
     sav_file_path: Option<PathBuf>,
-    #[serde(skip)]
+    //the data in that file
     sav_data: Option<Save>,
 
-    // Example stuff:
-    _label: String,
-    
-
-    // this how you opt-out of serialization of a member
-    #[serde(skip)]
-    _value: f32,
+    //labels and text validators for resources
+    minerals_label_and_validator: Vec<(String,ValText<usize>)>,
+    brewing_label_and_validator: Vec<(String,ValText<usize>)>,
+    misc_label_and_validator: Vec<(String,ValText<usize>)>,
 }
 
-impl Default for TemplateApp {
+impl Default for Application {
     fn default() -> Self {
         Self {
+            //the path to the current file being edited
             sav_file_path: None,
+            //the data in that file
             sav_data: None,
-            // Example stuff:
-            _label: "Hello World!".to_owned(),
-            _value: 2.7,
+            //labels and text validators for resources
+            minerals_label_and_validator: Vec::from([ //using a vector so that order is preserved
+                (String::from("Bismor    "), Default::default()),
+                (String::from("Croppa    "), Default::default()),
+                (String::from("Enor Pearl"), Default::default()),
+                (String::from("Jadiz     "), Default::default()),
+                (String::from("Magnite   "), Default::default()),
+                (String::from("Umanite   "), Default::default()),
+            ]),
+            brewing_label_and_validator: todo!(),
+            misc_label_and_validator: todo!(),
         }
     }
 }
 
-impl TemplateApp {
+impl Application {
     /// Called once before the first frame.
-    pub fn new(cc: &eframe::CreationContext<'_>) -> Self {
-        let mut app:TemplateApp;
+    pub fn new(_cc: &eframe::CreationContext<'_>) -> Self {
+        let mut app:Application;
         // This is also where you can customized the look at feel of egui using
         // `cc.egui_ctx.set_visuals` and `cc.egui_ctx.set_fonts`
 
         // Load previous app state (if any).
         // Note that you must enable the `persistence` feature for this to work.
-        if let Some(storage) = cc.storage {
-            app = eframe::get_value(storage, eframe::APP_KEY).unwrap_or_default();
-        }
-        else {
-            app = Default::default()
-        }
+        //if let Some(storage) = cc.storage {
+        //    app = eframe::get_value(storage, eframe::APP_KEY).unwrap_or_default();
+        //}
+        //else {
+        //    app = Default::default()
+        //}
+        app = Default::default();
 
         //for testing purposes, start up with a default Save
         app.sav_data = Some(Default::default());
 
         return app;
     }
+
+
+    /// updates self.sav_data with information from various gui components
+    fn update_save(&mut self, _ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        //DATA
+
+        //read from all the validators, if they have a value in them then set the associated sav_data value to it.
+        if let Some(save) = &mut self.sav_data {
+            // Minerals
+            //bismor
+            if let Some(val) = self.minerals_label_and_validator[0].1.get_val(){save.resources.minerals.bismor = *val;}
+            //croppa
+            if let Some(val) = self.minerals_label_and_validator[1].1.get_val(){save.resources.minerals.croppa = *val;}
+            //enor_pearl
+            if let Some(val) = self.minerals_label_and_validator[2].1.get_val(){save.resources.minerals.enor_pearl = *val;}
+            //jadiz
+            if let Some(val) = self.minerals_label_and_validator[3].1.get_val(){save.resources.minerals.jadiz = *val;}
+            //magnite
+            if let Some(val) = self.minerals_label_and_validator[4].1.get_val(){save.resources.minerals.magnite = *val;}
+            //umanite
+            if let Some(val) = self.minerals_label_and_validator[5].1.get_val(){save.resources.minerals.umanite = *val;}
+
+            // Brewing
+
+            // Misc
+        }
+    
+    }
 }
 
-impl eframe::App for TemplateApp {
+impl eframe::App for Application {
     /// Called by the frame work to save state before shutdown.
-    fn save(&mut self, storage: &mut dyn eframe::Storage) {
-        eframe::set_value(storage, eframe::APP_KEY, self);
-    }
+    // fn save(&mut self, storage: &mut dyn eframe::Storage) {
+    //     eframe::set_value(storage, eframe::APP_KEY, self);
+    // }
 
     /// Called each time the UI needs repainting, which may be many times per second.
     /// Put your widgets into a `SidePanel`, `TopPanel`, `CentralPanel`, `Window` or `Area`.
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
-        let Self { sav_file_path,sav_data, _label, _value } = self;
+        let Application { 
+            sav_file_path, 
+            sav_data,
+            minerals_label_and_validator,
+            brewing_label_and_validator,
+            misc_label_and_validator,
+        } = self;
 
         // Examples of how to create different panels and windows.
         // Pick whichever suits you.
         // Tip: a good default choice is to just keep the `CentralPanel`.
         // For inspiration and more examples, go to https://emilk.github.io/egui
-
         #[cfg(not(target_arch = "wasm32"))] // no File->Quit on web pages!
         egui::TopBottomPanel::top("top_panel").show(ctx, |ui| {
             // The top panel is often a good place for a menu bar:
@@ -103,76 +141,32 @@ impl eframe::App for TemplateApp {
 
         egui::SidePanel::left("side_panel").show(ctx, |ui| {
             ui.heading("Minerals");
-            ui.with_layout(egui::Layout::top_down(egui::Align::LEFT), |ui| {
+            ui.with_layout(egui::Layout::top_down(egui::Align::LEFT), |ui| {               
                 ui.horizontal(|ui| {
-                    ui.label("Bismor");
-                    match sav_data {
-                        Some(save) => ui.text_edit_singleline(&mut save.resources.minerals.bismor),
-                        _ => ui.text_edit_singleline(&mut val_text::number_box_validator()) //because the text validator is declared and initialized in this scope, it's reset every frame, effectively blocking input while a save file is not loaded, this is desired behavior and not a bug
-                    }
-                });
-                ui.horizontal(|ui| {
-                    ui.label("Croppa");
-                    match sav_data {
-                        Some(save) => ui.text_edit_singleline(&mut save.resources.minerals.croppa),
-                        _ => ui.text_edit_singleline(&mut val_text::number_box_validator())
-                    }
-                });
-                ui.horizontal(|ui| {
-                    ui.label("Enor Pearl");
-                    match sav_data {
-                        Some(save) => ui.text_edit_singleline(&mut save.resources.minerals.enor_pearl),
-                        _ => ui.text_edit_singleline(&mut val_text::number_box_validator())
-                    }
-                });
-                ui.horizontal(|ui| {
-                    ui.label("Jadiz");
-                    match sav_data {
-                        Some(save) => ui.text_edit_singleline(&mut save.resources.minerals.jadiz),
-                        _ => ui.text_edit_singleline(&mut val_text::number_box_validator())
-                    }
-                });
-                ui.horizontal(|ui| {
-                    ui.label("Magnite");
-                    match sav_data {
-                        Some(save) => ui.text_edit_singleline(&mut save.resources.minerals.magnite),
-                        _ => ui.text_edit_singleline(&mut val_text::number_box_validator())
-                    }
-                });
-                ui.horizontal(|ui| {
-                    ui.label("Umanite");
-                    match sav_data {
-                        Some(save) => ui.text_edit_singleline(&mut save.resources.minerals.umanite),
-                        _ => ui.text_edit_singleline(&mut val_text::number_box_validator())
+                    for (label,validator) in minerals_label_and_validator.iter_mut() { //this consumes the collection, but that's okay, we can't use an iterator because we need the raw reference being stored, not a point to it
+                        //labels
+                        ui.label(label.to_string());
+                        //text boxes
+                        ui.text_edit_singleline(validator);
                     }
                 });
             });
 
-            // ui.horizontal(|ui| {
-            //     ui.label("Write something: ");
-            //     ui.text_edit_singleline(label);
-            // });
-
-            // ui.add(egui::Slider::new(value, 0.0..=10.0).text("value"));
-            // if ui.button("Increment").clicked() {
-            //     *value += 1.0;
-            // }
-
-            // ui.with_layout(egui::Layout::bottom_up(egui::Align::LEFT), |ui| {
-            //     ui.horizontal(|ui| {
-            //         ui.spacing_mut().item_spacing.x = 0.0;
-            //         ui.label("powered by ");
-            //         ui.hyperlink_to("egui", "https://github.com/emilk/egui");
-            //         ui.label(" and ");
-            //         ui.hyperlink_to(
-            //             "eframe",
-            //             "https://github.com/emilk/egui/tree/master/crates/eframe",
-            //         );
-            //         ui.label(".");
-            //     });
-            // });
+            ui.with_layout(egui::Layout::bottom_up(egui::Align::LEFT), |ui| {
+                ui.horizontal(|ui| {
+                    ui.spacing_mut().item_spacing.x = 0.0;
+                    ui.label("powered by ");
+                    ui.hyperlink_to("egui", "https://github.com/emilk/egui");
+                    ui.label(" and ");
+                    ui.hyperlink_to(
+                        "eframe",
+                        "https://github.com/emilk/egui/tree/master/crates/eframe",
+                    );
+                    ui.label(".");
+                });
+            });
         });
-
+        
         egui::CentralPanel::default().show(ctx, |ui| {
             // The central panel the region left after adding TopPanel's and SidePanel's
 
@@ -193,5 +187,8 @@ impl eframe::App for TemplateApp {
                 ui.label("You would normally chose either panels OR windows.");
             });
         }
+
+        // call update_save function to use input in gui components to modify self.sav_data
+        self.update_save(ctx, _frame);
     }
 }

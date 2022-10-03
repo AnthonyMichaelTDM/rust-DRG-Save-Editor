@@ -43,7 +43,7 @@ impl<T: FromStr> Default for ValText<T> {
         Self {
             text: Default::default(),
             val: Default::default(),
-            validator: Box::new(|text| text.parse().ok()),
+            validator: Box::new(|text| text.parse::<T>().ok()),
         }
     }
 }
@@ -67,10 +67,4 @@ impl<T> TextBuffer for ValText<T> {
         self.text.delete_char_range(char_range);
         self.val = (self.validator)(&self.text);
     }
-}
-
-pub fn number_box_validator() -> ValText<usize> {
-    return ValText::with_validator(|text| {
-        text.parse().ok().filter(|&n| true)
-    });
 }
