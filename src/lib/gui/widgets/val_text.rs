@@ -14,6 +14,7 @@ pub struct ValText<T> {
 }
 
 impl<T> ValText<T> {
+    #[allow(dead_code)]
     pub fn with_validator(validator: impl Fn(&str) -> Option<T> + 'static) -> Self {
         Self {
             text: Default::default(),
@@ -32,6 +33,7 @@ impl<T> ValText<T> {
 }
 
 impl<T: Display> ValText<T> {
+    #[allow(dead_code)]
     pub fn set_val(&mut self, val: T) {
         self.text = val.to_string();
         self.val = Some(val);

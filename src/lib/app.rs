@@ -108,17 +108,17 @@ impl Application {
             // Misc
             {
                 //error_cubes
-                if let Some(val) = self.brewing_label_and_validator[0].1.get_val() {save.resources.miscellaneous.error_cubes = *val}
+                if let Some(val) = self.misc_label_and_validator[0].1.get_val() {save.resources.miscellaneous.error_cubes = *val}
                 //blank_cores
-                if let Some(val) = self.brewing_label_and_validator[1].1.get_val() {save.resources.miscellaneous.blank_cores = *val}
+                if let Some(val) = self.misc_label_and_validator[1].1.get_val() {save.resources.miscellaneous.blank_cores = *val}
                 //credits
-                if let Some(val) = self.brewing_label_and_validator[2].1.get_val() {save.resources.miscellaneous.credits     = *val}
+                if let Some(val) = self.misc_label_and_validator[2].1.get_val() {save.resources.miscellaneous.credits     = *val}
                 //data_cells
-                if let Some(val) = self.brewing_label_and_validator[3].1.get_val() {save.resources.miscellaneous.data_cells  = *val}
+                if let Some(val) = self.misc_label_and_validator[3].1.get_val() {save.resources.miscellaneous.data_cells  = *val}
                 //perk_points
-                if let Some(val) = self.brewing_label_and_validator[4].1.get_val() {save.resources.miscellaneous.perk_points = *val}
+                if let Some(val) = self.misc_label_and_validator[4].1.get_val() {save.resources.miscellaneous.perk_points = *val}
                 //phazyonite
-                if let Some(val) = self.brewing_label_and_validator[5].1.get_val() {save.resources.miscellaneous.phazyonite  = *val}
+                if let Some(val) = self.misc_label_and_validator[5].1.get_val() {save.resources.miscellaneous.phazyonite  = *val}
             } //putting this into a separate scope to improve readibility
         }
     
@@ -184,6 +184,10 @@ impl eframe::App for Application {
                         //labels
                         ui.label(label.to_string());
                         //text boxes
+                        //make text red when invalid input is given
+                        if !validator.is_valid() {
+                            ui.visuals_mut().override_text_color = Some(egui::Color32::RED);
+                        }
                         ui.text_edit_singleline(validator);
                     });
                 }
@@ -197,6 +201,10 @@ impl eframe::App for Application {
                         //labels
                         ui.label(label.to_string());
                         //text boxes
+                        //make text red when invalid input is given
+                        if !validator.is_valid() {
+                            ui.visuals_mut().override_text_color = Some(egui::Color32::RED);
+                        }
                         ui.text_edit_singleline(validator);
                     });
                 }
@@ -210,6 +218,10 @@ impl eframe::App for Application {
                         //labels
                         ui.label(label.to_string());
                         //text boxes
+                        //make text red when invalid input is given
+                        if !validator.is_valid() {
+                            ui.visuals_mut().override_text_color = Some(egui::Color32::RED);
+                        }
                         ui.text_edit_singleline(validator);
                     });
                 }
