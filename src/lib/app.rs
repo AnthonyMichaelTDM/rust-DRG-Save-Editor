@@ -25,15 +25,27 @@ impl Default for Application {
             sav_data: None,
             //labels and text validators for resources
             minerals_label_and_validator: Vec::from([ //using a vector so that order is preserved
-                (String::from("Bismor    "), Default::default()),
-                (String::from("Croppa    "), Default::default()),
-                (String::from("Enor Pearl"), Default::default()),
-                (String::from("Jadiz     "), Default::default()),
-                (String::from("Magnite   "), Default::default()),
-                (String::from("Umanite   "), Default::default()),
+                (String::from("Bismor     "), Default::default()),
+                (String::from("Croppa     "), Default::default()),
+                (String::from("Enor Pearl "), Default::default()),
+                (String::from("Jadiz      "), Default::default()),
+                (String::from("Magnite    "), Default::default()),
+                (String::from("Umanite    "), Default::default()),
             ]),
-            brewing_label_and_validator: todo!(),
-            misc_label_and_validator: todo!(),
+            brewing_label_and_validator: Vec::from([
+                (String::from("Barley Bulb"), Default::default()),
+                (String::from("Malt Star  "), Default::default()),
+                (String::from("Starch Nut "), Default::default()),
+                (String::from("Yeast Cone "), Default::default()),
+            ]),
+            misc_label_and_validator: Vec::from([
+                (String::from("Error Cubes"), Default::default()),
+                (String::from("Blank Cores"), Default::default()),
+                (String::from("Credits    "), Default::default()),
+                (String::from("Perk Points"), Default::default()),
+                (String::from("Data Cells "), Default::default()),
+                (String::from("Phazyonite "), Default::default()),
+            ]),
         }
     }
 }
@@ -61,7 +73,6 @@ impl Application {
         return app;
     }
 
-
     /// updates self.sav_data with information from various gui components
     fn update_save(&mut self, _ctx: &egui::Context, _frame: &mut eframe::Frame) {
         //DATA
@@ -69,22 +80,46 @@ impl Application {
         //read from all the validators, if they have a value in them then set the associated sav_data value to it.
         if let Some(save) = &mut self.sav_data {
             // Minerals
-            //bismor
-            if let Some(val) = self.minerals_label_and_validator[0].1.get_val(){save.resources.minerals.bismor = *val;}
-            //croppa
-            if let Some(val) = self.minerals_label_and_validator[1].1.get_val(){save.resources.minerals.croppa = *val;}
-            //enor_pearl
-            if let Some(val) = self.minerals_label_and_validator[2].1.get_val(){save.resources.minerals.enor_pearl = *val;}
-            //jadiz
-            if let Some(val) = self.minerals_label_and_validator[3].1.get_val(){save.resources.minerals.jadiz = *val;}
-            //magnite
-            if let Some(val) = self.minerals_label_and_validator[4].1.get_val(){save.resources.minerals.magnite = *val;}
-            //umanite
-            if let Some(val) = self.minerals_label_and_validator[5].1.get_val(){save.resources.minerals.umanite = *val;}
-
+            {
+                //bismor
+                if let Some(val) = self.minerals_label_and_validator[0].1.get_val() {save.resources.minerals.bismor     = *val;}
+                //croppa
+                if let Some(val) = self.minerals_label_and_validator[1].1.get_val() {save.resources.minerals.croppa     = *val;}
+                //enor_pearl
+                if let Some(val) = self.minerals_label_and_validator[2].1.get_val() {save.resources.minerals.enor_pearl = *val;}
+                //jadiz
+                if let Some(val) = self.minerals_label_and_validator[3].1.get_val() {save.resources.minerals.jadiz      = *val;}
+                //magnite
+                if let Some(val) = self.minerals_label_and_validator[4].1.get_val() {save.resources.minerals.magnite    = *val;}
+                //umanite
+                if let Some(val) = self.minerals_label_and_validator[5].1.get_val() {save.resources.minerals.umanite    = *val;}
+            } //putting this into a separate scope to improve readibility
             // Brewing
-
+            {
+                //barley_bulb
+                if let Some(val) = self.brewing_label_and_validator[0].1.get_val() {save.resources.brewing.barley_bulb = *val}
+                //malt_star
+                if let Some(val) = self.brewing_label_and_validator[1].1.get_val() {save.resources.brewing.malt_star   = *val}
+                //starch_nut
+                if let Some(val) = self.brewing_label_and_validator[2].1.get_val() {save.resources.brewing.starch_nut  = *val}
+                //yeast_cone
+                if let Some(val) = self.brewing_label_and_validator[3].1.get_val() {save.resources.brewing.yeast_cone  = *val}
+            } //putting this into a separate scope to improve readibility
             // Misc
+            {
+                //error_cubes
+                if let Some(val) = self.brewing_label_and_validator[0].1.get_val() {save.resources.miscellaneous.error_cubes = *val}
+                //blank_cores
+                if let Some(val) = self.brewing_label_and_validator[1].1.get_val() {save.resources.miscellaneous.blank_cores = *val}
+                //credits
+                if let Some(val) = self.brewing_label_and_validator[2].1.get_val() {save.resources.miscellaneous.credits     = *val}
+                //data_cells
+                if let Some(val) = self.brewing_label_and_validator[3].1.get_val() {save.resources.miscellaneous.data_cells  = *val}
+                //perk_points
+                if let Some(val) = self.brewing_label_and_validator[4].1.get_val() {save.resources.miscellaneous.perk_points = *val}
+                //phazyonite
+                if let Some(val) = self.brewing_label_and_validator[5].1.get_val() {save.resources.miscellaneous.phazyonite  = *val}
+            } //putting this into a separate scope to improve readibility
         }
     
     }
@@ -111,14 +146,15 @@ impl eframe::App for Application {
         // Pick whichever suits you.
         // Tip: a good default choice is to just keep the `CentralPanel`.
         // For inspiration and more examples, go to https://emilk.github.io/egui
-        #[cfg(not(target_arch = "wasm32"))] // no File->Quit on web pages!
         egui::TopBottomPanel::top("top_panel").show(ctx, |ui| {
             // The top panel is often a good place for a menu bar:
             egui::menu::bar(ui, |ui| {
                 ui.menu_button("File", |ui| {
+                    #[cfg(not(target_arch = "wasm32"))] // no File->Quit on web pages!
                     if ui.button("Quit").clicked() {
                         _frame.close();
                     }
+
                     if ui.button("Open File").clicked() {
                         //open a file dialog with rfd
                         *sav_file_path = FileDialog::new()
@@ -141,15 +177,42 @@ impl eframe::App for Application {
 
         egui::SidePanel::left("side_panel").show(ctx, |ui| {
             ui.heading("Minerals");
-            ui.with_layout(egui::Layout::top_down(egui::Align::LEFT), |ui| {               
-                ui.horizontal(|ui| {
-                    for (label,validator) in minerals_label_and_validator.iter_mut() { //this consumes the collection, but that's okay, we can't use an iterator because we need the raw reference being stored, not a point to it
+            ui.with_layout(egui::Layout::top_down(egui::Align::LEFT), |ui| {  
+                ui.style_mut().override_text_style = Some(egui::TextStyle::Monospace);             
+                for (label,validator) in minerals_label_and_validator.iter_mut() { //this consumes the collection, but that's okay, we can't use an iterator because we need the raw reference being stored, not a point to it
+                    ui.horizontal(|ui| {
                         //labels
                         ui.label(label.to_string());
                         //text boxes
                         ui.text_edit_singleline(validator);
-                    }
-                });
+                    });
+                }
+            });
+
+            ui.heading("Brewing");
+            ui.with_layout(egui::Layout::top_down(egui::Align::LEFT), |ui| {  
+                ui.style_mut().override_text_style = Some(egui::TextStyle::Monospace);             
+                for (label,validator) in brewing_label_and_validator.iter_mut() { //this consumes the collection, but that's okay, we can't use an iterator because we need the raw reference being stored, not a point to it
+                    ui.horizontal(|ui| {
+                        //labels
+                        ui.label(label.to_string());
+                        //text boxes
+                        ui.text_edit_singleline(validator);
+                    });
+                }
+            });
+
+            ui.heading("Miscellaneous");
+            ui.with_layout(egui::Layout::top_down(egui::Align::LEFT), |ui| {  
+                ui.style_mut().override_text_style = Some(egui::TextStyle::Monospace);             
+                for (label,validator) in misc_label_and_validator.iter_mut() { //this consumes the collection, but that's okay, we can't use an iterator because we need the raw reference being stored, not a point to it
+                    ui.horizontal(|ui| {
+                        //labels
+                        ui.label(label.to_string());
+                        //text boxes
+                        ui.text_edit_singleline(validator);
+                    });
+                }
             });
 
             ui.with_layout(egui::Layout::bottom_up(egui::Align::LEFT), |ui| {

@@ -22,7 +22,7 @@ pub struct Brewing {
 }
 #[derive(Default)]
 pub struct Miscellaneous {
-    pub error_cube: usize,
+    pub error_cubes: usize,
     pub blank_cores: usize,
     pub credits: usize,
     pub perk_points: usize,
