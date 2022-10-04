@@ -1,3 +1,4 @@
+pub mod resources;
 mod gui;
 mod save_file_utils;
 mod app;

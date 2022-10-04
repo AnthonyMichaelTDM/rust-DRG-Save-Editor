@@ -1,4 +1,5 @@
-season_guids = [
+#[allow(dead_code)]
+pub const SEASON_GUIDS: [&str;2] = [
     "A47D407EC0E4364892CE2E03DE7DF0B3",
     "B860B55F1D1BB54D8EE2E41FDA9F5838",
-]
+];

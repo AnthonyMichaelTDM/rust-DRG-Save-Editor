@@ -1,4 +1,5 @@
-xp_table = [
+#[allow(dead_code)]
+pub const XP_TABLE: [usize;25] = [
     0,
     3000,
     7000,
@@ -24,9 +25,9 @@ xp_table = [
     274500,
     294500,
     315000,
-]
-
-promo_ranks = [
+];
+#[allow(dead_code)]
+pub const PROMO_RANKS: [&str;20]  = [
     "None",
     "Bronze 1",
     "Bronze 2",
@@ -47,10 +48,11 @@ promo_ranks = [
     "Legendary 2",
     "Legendary 3",
     "Legendary 3+",
-]
+];
 
-# ordered list of player rank titles (low -> high)
-rank_titles = [
+#[allow(dead_code)]
+//ordered list of player rank titles (low -> high)
+pub const RANK_TITLES: [&str;75] = [
     "Greenbeard",
     "Rock Hauler",
     "Cave Runner",
@@ -126,4 +128,4 @@ rank_titles = [
     "Gilded Master",
     "Gilded Master",
     "Gilded Master",
-]
+];

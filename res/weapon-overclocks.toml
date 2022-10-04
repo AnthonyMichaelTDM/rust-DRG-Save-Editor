@@ -1,4 +1,7 @@
+#this is parsed into a collection at runtime
+
 [driller]
+name = "Driller"
     [[driller.weapons]]
     name = "Experimental Plasma Charger"
         [[driller.weapons.overclocks]]
@@ -410,6 +413,7 @@
 
     
 [engineer]
+name = "Engineer"
     [[engineer.weapons]]
     name = "'Warthog' Auto 210"
         [[engineer.weapons.overclocks]]
@@ -821,6 +825,7 @@
 
 
 [gunner]
+name = "Gunner"
     [[gunner.weapons]]
     name = "'Thunderhead' Heavy Autocannon"
         [[gunner.weapons.overclocks]]
@@ -1270,6 +1275,7 @@
     
 
 [scout]
+name = "Scout"
     [[scout.weapons]]
     name = "Deepcore GK2"
         [[scout.weapons.overclocks]]
