@@ -6,12 +6,14 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rfd = "0.10.0"
-serde = "1.0.145"
+cached = "0.39.0"
 toml = "0.5.9"
 egui = "0.19.0"
-eframe = { version = "0.19.0" }
-# serde = { version = "1", features = ["derive"] } # You only need this if you want app persistence
+eframe = "0.19.0"
+rfd = "0.10.0"
+phf = { version = "0.11.1", features = ["macros"] }
+serde = { version = "1.0.145", features = ["derive"] }
+project-root = "0.2.2"
 
 # native:
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
@@ -21,6 +23,7 @@ tracing-subscriber = "0.3"
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 console_error_panic_hook = "0.1.6"
 tracing-wasm = "0.2"
+cached = { version = "0.39.0", features = ["wasm"]}
 
 
 [profile.release]

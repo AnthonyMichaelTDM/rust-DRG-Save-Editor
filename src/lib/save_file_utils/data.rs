@@ -29,3 +29,20 @@ pub struct Miscellaneous {
     pub data_cells: usize,
     pub phazyonite: usize,
 }
+
+#[derive(Default)]
+pub struct Classes {
+    pub rank: usize,
+    pub title: String,
+    pub driller: Class,
+    pub engineer: Class,
+    pub gunner: Class,
+    pub scout: Class,
+}
+#[derive(Default)]
+pub struct Class {
+    pub xp_total: usize,
+    pub level: usize,
+    pub xp_prog: usize,
+    pub promotion: String,
+}

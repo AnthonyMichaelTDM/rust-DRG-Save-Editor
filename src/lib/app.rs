@@ -1,8 +1,11 @@
 use std::{path::PathBuf, fs};
 
+use eframe::egui::Ui;
 use rfd::FileDialog;
 
-use super::{save_file_utils::{Save, self}, gui::widgets::val_text::ValText};
+use crate::lib::gui;
+
+use super::{save_file_utils::{Save, self}, gui::widgets::val_text::ValText, resources};
 
 pub struct Application<> {
     //the path to the current file being edited
@@ -14,6 +17,24 @@ pub struct Application<> {
     minerals_label_and_validator: Vec<(String,ValText<usize>)>,
     brewing_label_and_validator: Vec<(String,ValText<usize>)>,
     misc_label_and_validator: Vec<(String,ValText<usize>)>,
+
+    //classes
+    driller_ui_comps: ClassUIComponents,
+    engineer_ui_comps: ClassUIComponents,
+    gunner_ui_comps: ClassUIComponents,
+    scout_ui_comps: ClassUIComponents,
+
+    //seasonal
+    seasonal_progress_validator: ValText<usize>,
+    seasonal_level_validator: ValText<usize>,
+    seasonal_scrip_validator: ValText<usize>,
+
+    //overclocks
+    overclock_filter_combobox_options: Vec<OcFilter>,
+    overclock_filter_combobox_selected: usize,
+
+    //other
+    weapon_ocs: resources::weapon_overclocks::DeserializedWeaponOverclockTOML,
 }
 
 impl Default for Application {
@@ -46,6 +67,21 @@ impl Default for Application {
                 (String::from("Data Cells "), Default::default()),
                 (String::from("Phazyonite "), Default::default()),
             ]),
+            //classes
+            driller_ui_comps:  ClassUIComponents::default(String::from(" Driller")),
+            engineer_ui_comps: ClassUIComponents::default(String::from("Engineer")),
+            gunner_ui_comps:   ClassUIComponents::default(String::from("  Gunner")),
+            scout_ui_comps:    ClassUIComponents::default(String::from("   Scout")),
+            //seasonal
+            seasonal_progress_validator: Default::default(),
+            seasonal_level_validator: Default::default(),
+            seasonal_scrip_validator: Default::default(),
+            //overclock
+            overclock_filter_combobox_options: OcFilter::vec_with_all(),
+            overclock_filter_combobox_selected: 0,
+            //other
+            weapon_ocs: resources::get_weapon_overclocks(),
+            
         }
     }
 }
@@ -74,7 +110,8 @@ impl Application {
     }
 
     /// updates self.sav_data with information from various gui components
-    fn update_save(&mut self, _ctx: &egui::Context, _frame: &mut eframe::Frame) {
+    /// TODO: add 
+    fn update_save(&mut self) {
         //DATA
 
         //read from all the validators, if they have a value in them then set the associated sav_data value to it.
@@ -120,8 +157,10 @@ impl Application {
                 //phazyonite
                 if let Some(val) = self.misc_label_and_validator[5].1.get_val() {save.resources.miscellaneous.phazyonite  = *val}
             } //putting this into a separate scope to improve readibility
+
+            // TODO: add other stuff
+            todo!();            
         }
-    
     }
 }
 
@@ -134,12 +173,23 @@ impl eframe::App for Application {
     /// Called each time the UI needs repainting, which may be many times per second.
     /// Put your widgets into a `SidePanel`, `TopPanel`, `CentralPanel`, `Window` or `Area`.
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        //DATA
         let Application { 
             sav_file_path, 
             sav_data,
             minerals_label_and_validator,
             brewing_label_and_validator,
             misc_label_and_validator,
+            driller_ui_comps: driller,
+            engineer_ui_comps: engineer,
+            gunner_ui_comps: gunner,
+            scout_ui_comps: scout,
+            seasonal_progress_validator,
+            seasonal_level_validator,
+            seasonal_scrip_validator,
+            overclock_filter_combobox_options,
+            overclock_filter_combobox_selected,
+            weapon_ocs,
         } = self;
 
         // Examples of how to create different panels and windows.
@@ -176,56 +226,29 @@ impl eframe::App for Application {
         });
 
         egui::SidePanel::left("side_panel").show(ctx, |ui| {
-            ui.heading("Minerals");
-            ui.with_layout(egui::Layout::top_down(egui::Align::LEFT), |ui| {  
-                ui.style_mut().override_text_style = Some(egui::TextStyle::Monospace);             
-                for (label,validator) in minerals_label_and_validator.iter_mut() { //this consumes the collection, but that's okay, we can't use an iterator because we need the raw reference being stored, not a point to it
+            /// function to add the labels and validators in the given Vec to the given UI
+            fn add_labels_and_validators(ui: &mut Ui, labels_and_validators: &mut Vec<(String,ValText<usize>)>) {
+                ui.style_mut().override_text_style = Some(egui::TextStyle::Monospace);        
+                for (label,validator) in labels_and_validators.iter_mut() { //this consumes the collection, but that's okay, we can't use an iterator because we need the raw reference being stored, not a point to it
                     ui.horizontal(|ui| {
                         //labels
                         ui.label(label.to_string());
                         //text boxes
-                        //make text red when invalid input is given
-                        if !validator.is_valid() {
-                            ui.visuals_mut().override_text_color = Some(egui::Color32::RED);
-                        }
-                        ui.text_edit_singleline(validator);
+                        gui::add_singleline_textedit_with_validator(ui, validator, None);
                     });
                 }
-            });
+            }
+
+            ui.heading("Minerals");
+            add_labels_and_validators(ui, minerals_label_and_validator);
+            ui.separator();
 
             ui.heading("Brewing");
-            ui.with_layout(egui::Layout::top_down(egui::Align::LEFT), |ui| {  
-                ui.style_mut().override_text_style = Some(egui::TextStyle::Monospace);             
-                for (label,validator) in brewing_label_and_validator.iter_mut() { //this consumes the collection, but that's okay, we can't use an iterator because we need the raw reference being stored, not a point to it
-                    ui.horizontal(|ui| {
-                        //labels
-                        ui.label(label.to_string());
-                        //text boxes
-                        //make text red when invalid input is given
-                        if !validator.is_valid() {
-                            ui.visuals_mut().override_text_color = Some(egui::Color32::RED);
-                        }
-                        ui.text_edit_singleline(validator);
-                    });
-                }
-            });
+            add_labels_and_validators(ui, brewing_label_and_validator);
+            ui.separator();
 
             ui.heading("Miscellaneous");
-            ui.with_layout(egui::Layout::top_down(egui::Align::LEFT), |ui| {  
-                ui.style_mut().override_text_style = Some(egui::TextStyle::Monospace);             
-                for (label,validator) in misc_label_and_validator.iter_mut() { //this consumes the collection, but that's okay, we can't use an iterator because we need the raw reference being stored, not a point to it
-                    ui.horizontal(|ui| {
-                        //labels
-                        ui.label(label.to_string());
-                        //text boxes
-                        //make text red when invalid input is given
-                        if !validator.is_valid() {
-                            ui.visuals_mut().override_text_color = Some(egui::Color32::RED);
-                        }
-                        ui.text_edit_singleline(validator);
-                    });
-                }
-            });
+            add_labels_and_validators(ui, misc_label_and_validator);
 
             ui.with_layout(egui::Layout::bottom_up(egui::Align::LEFT), |ui| {
                 ui.horizontal(|ui| {
@@ -241,29 +264,180 @@ impl eframe::App for Application {
                 });
             });
         });
+
+        egui::SidePanel::right("right_panel").show(ctx, |ui| {
+            //right panel, contains the list of 'Aquired but unforged' OC's
+            todo!();
+        });
         
         egui::CentralPanel::default().show(ctx, |ui| {
             // The central panel the region left after adding TopPanel's and SidePanel's
+            
+            // classes panel
+            egui::ScrollArea::horizontal().id_source("classes panel").show(ui, |ui| {
+                //heading
+                if let Some(save) = sav_data {
+                    ui.heading(format!("Classes - Rank {}, {}",save.classes.rank, save.classes.title));
+                } else {
+                    ui.heading("Classes");
+                }
 
-            ui.heading("eframe template");
-            ui.hyperlink("https://github.com/emilk/eframe_template");
-            ui.add(egui::github_link_file!(
-                "https://github.com/emilk/eframe_template/blob/master/",
-                "Source code."
-            ));
-            egui::warn_if_debug_build(ui);
+                //formatting
+                ui.style_mut().override_text_style = Some(egui::TextStyle::Monospace);
+                //contents
+                for class in [driller,engineer,gunner,scout] {
+                    ui.horizontal(|ui| {
+                        //xp total
+                        ui.label(&class.class_label);
+                        gui::add_singleline_textedit_with_validator(ui, &mut class.xp_total_validator, Some(96.0f32));
+                        //level
+                        ui.label("Lvl ");
+                        gui::add_singleline_textedit_with_validator(ui, &mut class.level_validator, Some(16.0f32));
+                        //xp progress
+                        ui.label("Progress");
+                        gui::add_singleline_textedit_with_validator(ui, &mut class.xp_progress_validator, Some(96f32));
+                        //promotion
+                        ui.label("Promotion ");
+                        egui::ComboBox::from_id_source(&class.id_source).show_index(
+                            ui, 
+                            &mut class.promotion_selected, 
+                            class.promotion_options.len(), 
+                            |i| class.promotion_options[i].to_owned()
+                        )
+                    });
+                }
+                
+            });
+            ui.separator();
+
+            // season panel
+            egui::ScrollArea::horizontal().id_source("season panel").show(ui, |ui| {
+                //heading
+                ui.heading("Seasonal");
+
+                //contents
+                ui.horizontal(|ui|{
+                    ui.label("Lvl Progress");
+                    gui::add_singleline_textedit_with_validator(ui, seasonal_progress_validator, Some(64.0f32));
+
+                    ui.label("Lvl");
+                    gui::add_singleline_textedit_with_validator(ui, seasonal_level_validator, Some(64.0f32));
+
+                    ui.label("Scrip");
+                    gui::add_singleline_textedit_with_validator(ui, seasonal_scrip_validator, Some(64.0f32));
+                });
+            });
+            ui.separator();
+
+            // overclocks panel
+            egui::ScrollArea::horizontal().id_source("overclocks panel").show(ui, |ui| {
+                ui.spacing_mut().item_spacing.x = 10.0;
+
+                //heading
+                ui.horizontal(|ui|{
+                    //heading
+                    ui.heading("Overclocks");
+
+                    //combo box
+                    egui::ComboBox::from_id_source("oc filter").show_index(
+                        ui, 
+                        overclock_filter_combobox_selected, 
+                        overclock_filter_combobox_options.len(), 
+                        |i| overclock_filter_combobox_options[i].string()
+                    );
+
+                    //button
+                    if ui.button("Add Cores To Inventory").clicked() {
+                        todo!();
+                    }
+                });
+
+                //contents (depends on selection in previous selection box)
+                egui::ScrollArea::both().show(ui, |ui| {
+                    /// isolated repetitive code to ease with debugging and improve readibility
+                    fn populate_collapsing_with_class_overclock_info(ui: &mut Ui, class: &mut resources::weapon_overclocks::Class) {
+                        for weapon in class.weapons.iter_mut() {
+                            ui.collapsing(&weapon.name, |ui| {
+                                for overclock in weapon.overclocks.iter_mut() {
+                                    ui.horizontal_wrapped(|ui| {
+                                        ui.with_layout(egui::Layout::top_down(egui::Align::LEFT), |ui| {
+                                            ui.checkbox(&mut overclock.selected, &overclock.name);
+                                        });
+                                        ui.with_layout(egui::Layout::top_down(egui::Align::RIGHT), |ui| {
+                                            ui.horizontal(|ui| {
+                                                ui.label(&overclock.guid);
+                                                ui.label(&overclock.status());
+                                            });
+                                        });
+                                    });
+                                }
+                            });
+                        }
+                    }
+
+                    //driller
+                    let name = weapon_ocs.driller.name.clone();
+                    ui.collapsing(name, |ui| populate_collapsing_with_class_overclock_info(ui, &mut weapon_ocs.driller));
+                    //engineer
+                    let name = weapon_ocs.engineer.name.clone();
+                    ui.collapsing(name, |ui| populate_collapsing_with_class_overclock_info(ui, &mut weapon_ocs.engineer));
+                    //gunner
+                    let name = weapon_ocs.gunner.name.clone();
+                    ui.collapsing(name, |ui| populate_collapsing_with_class_overclock_info(ui, &mut weapon_ocs.gunner));
+                    //scout
+                    let name = weapon_ocs.scout.name.clone();
+                    ui.collapsing(name, |ui| populate_collapsing_with_class_overclock_info(ui, &mut weapon_ocs.scout));
+                });
+            });
         });
 
-        if false {
-            egui::Window::new("Window").show(ctx, |ui| {
-                ui.label("Windows can be moved by dragging them.");
-                ui.label("They are automatically sized based on contents.");
-                ui.label("You can turn on resizing and scrolling if you like.");
-                ui.label("You would normally chose either panels OR windows.");
-            });
-        }
-
         // call update_save function to use input in gui components to modify self.sav_data
-        self.update_save(ctx, _frame);
+        self.update_save();
+    }
+}
+
+struct ClassUIComponents {
+    id_source: String,
+    class_label: String,
+    xp_total_validator: ValText<usize>,
+    level_validator: ValText<usize>,
+    xp_progress_validator: ValText<usize>,
+    promotion_options: Vec<String>,
+    promotion_selected: usize,
+}
+impl ClassUIComponents {
+    fn default(class_label:String) -> Self {
+        Self { 
+            id_source: format!("{} promotions", class_label.trim().to_ascii_lowercase()),
+            class_label, 
+            xp_total_validator: Default::default(), 
+            level_validator: ValText::with_validator(|text| text.parse().ok().filter(|n| *n <= 25) ), 
+            xp_progress_validator: Default::default(), 
+            promotion_options: resources::level_info::PROMO_RANKS.iter().map(|&s|s.to_owned()).collect(), 
+            promotion_selected: 0 
+        }
+    }
+}
+
+#[derive(PartialEq, Eq, Hash, Clone)]
+/// enum to keep track of the filter selected for the Overclock selection panel
+enum OcFilter {
+    All,
+    Unforged,
+    Forged,
+    Unacquired,
+}
+impl OcFilter {
+    /// returns a vector with all the variants of the enum
+    fn vec_with_all() -> Vec<OcFilter> {
+        return vec![OcFilter::All, OcFilter::Unforged, OcFilter::Forged, OcFilter::Unacquired];
+    }
+    fn string(&self) -> String {
+        return String::from(match self {
+            OcFilter::All => "All",
+            OcFilter::Unforged => "Unforged",
+            OcFilter::Forged => "Forged",
+            OcFilter::Unacquired => "Unaquired",
+        });
     }
 }
