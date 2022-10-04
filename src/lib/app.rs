@@ -330,7 +330,7 @@ impl eframe::App for Application {
             ui.separator();
 
             // overclocks panel
-            egui::ScrollArea::horizontal().id_source("overclocks panel").show(ui, |ui| {
+            egui::ScrollArea::both().id_source("overclocks panel").show(ui, |ui| {
                 ui.spacing_mut().item_spacing.x = 10.0;
 
                 //heading
@@ -353,18 +353,19 @@ impl eframe::App for Application {
                 });
 
                 //contents (depends on selection in previous selection box)
-                egui::ScrollArea::both().show(ui, |ui| {
+                ui.scope(|ui| {
+                    ui.style_mut().override_text_style = Some(egui::TextStyle::Monospace);
                     /// isolated repetitive code to ease with debugging and improve readibility
                     fn populate_collapsing_with_class_overclock_info(ui: &mut Ui, class: &mut resources::weapon_overclocks::Class) {
                         for weapon in class.weapons.iter_mut() {
                             ui.collapsing(&weapon.name, |ui| {
                                 for overclock in weapon.overclocks.iter_mut() {
-                                    ui.horizontal_wrapped(|ui| {
+                                    ui.horizontal(|ui| {
                                         ui.with_layout(egui::Layout::top_down(egui::Align::LEFT), |ui| {
                                             ui.checkbox(&mut overclock.selected, &overclock.name);
                                         });
                                         ui.with_layout(egui::Layout::top_down(egui::Align::RIGHT), |ui| {
-                                            ui.horizontal(|ui| {
+                                            ui.horizontal_wrapped(|ui| {
                                                 ui.label(&overclock.guid);
                                                 ui.label(&overclock.status());
                                             });
