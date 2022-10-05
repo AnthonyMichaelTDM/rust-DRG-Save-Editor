@@ -18,6 +18,7 @@ A computer with rust installed, pretty much anything that can run DRG is capable
 - run the `Cargo run` command to compile and run the program, if there are any compilation errors, open an issue on this github repo and I'll try to help you out
 
 ## Known Issues
+- as the GUI isn't finished yet, the program will panic if it's compiled and ran.
 
 ## Troubleshooting
 If the editor opens but doesn't edit your save properly (i.e., values not being read properly, changes not being reflected in-game, etc) please open an issue, describe the problem as thoroughly as you can, and attach a copy of your save file from BEFORE any edits were attempted.
