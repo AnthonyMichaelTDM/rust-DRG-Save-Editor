@@ -15,7 +15,7 @@ A computer with rust installed, pretty much anything that can run DRG is capable
 - clone the repo: `git clone https://github.com/AnthonyMichaelTDM/rust-DRG-Save-Editor.git`
 - make sure you have rust installed, if you don't, you can follow the [instrustions here](https://www.rust-lang.org/tools/install)
 - open your terminal in the base directory of the project
-- run the `Cargo run` command to compile and run the program, if there are any compilation errors, open an issue on this github repo and I'll try to help you out
+- run the `cargo run` command to compile and run the program, if there are any compilation errors, open an issue on this github repo and I'll try to help you out
 
 ## Known Issues
 - as the GUI isn't finished yet, the program will panic if it's compiled and ran.
