@@ -48,7 +48,7 @@ Some notes:
 - Better readme
 - "Restore from backup" option in toolbar menu
 
-## Long term goals (would be nice, not will take a lot of effort)
+## Long term goals (would be nice, but ehhh...)
 - Cosmetic overclock support
 - Assignment support
 - Character loadout support
