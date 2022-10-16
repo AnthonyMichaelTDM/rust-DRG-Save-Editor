@@ -1,6 +1,8 @@
 # DRG Save Editor
 This is a standalone DRG save editor written in rust.
 
+# NOTE: currently this is just a GUI, the backend hasn't been implemented yet.
+
 ## There are likely to be bugs, see the Known Issues and Troubleshooting section!
 
 ## The project is inspired by [robertnunn's DRG-Save-Editor](https://github.com/robertnunn/DRG-Save-Editor), but aims to resolve some known issues and work on the most recent releases of DRG.
@@ -13,9 +15,10 @@ A computer with rust installed, pretty much anything that can run DRG is capable
 - clone the repo: `git clone https://github.com/AnthonyMichaelTDM/rust-DRG-Save-Editor.git`
 - make sure you have rust installed, if you don't, you can follow the [instrustions here](https://www.rust-lang.org/tools/install)
 - open your terminal in the base directory of the project
-- run the `Cargo run` command to compile and run the program, if there are any compilation errors, open an issue on this github repo and I'll try to help you out
+- run the `cargo run` command to compile and run the program, if there are any compilation errors, open an issue on this github repo and I'll try to help you out
 
 ## Known Issues
+- as the GUI isn't finished yet, the program will panic if it's compiled and ran.
 
 ## Troubleshooting
 If the editor opens but doesn't edit your save properly (i.e., values not being read properly, changes not being reflected in-game, etc) please open an issue, describe the problem as thoroughly as you can, and attach a copy of your save file from BEFORE any edits were attempted.
@@ -28,23 +31,25 @@ The editor should be pretty self-explanatory, see the screenshot below.
 
 Some notes:
 - There is a context menu in the overclock tree listing to add overclocks to the inventory
-- You can CTRL+Click on overclocks to select more than one
 - Changing XP values will update the other relevant fields when the focus changes (i.e., click on a different part of the program or another program entirely)
 - If you have promotions beyond Legendary 3 those promotions will be preserved as long as the drop-down is set to "Legendary 3+". If you don't have enough promotions for a specific dwarf and set them to "Legendary 3+" it will keep whatever the original value was.
-- the `DRG Save Editor.zip` file is out of date, the only reason it's still in the repository is because there's really no point in removing it 
 
 ![main_screen](sshot.png)
 ## Changelog
-- v1.0
-  - Initial release
 
 ## To-Do
-- Cosmetic overclock support
+- Finish GUI frontend
+- add backend for deserializing major components (resources, class xp/lvl/promotions, weapon OCs) of sav files
+- add backend for serializing save files
+- update for season 3
+- "Restore from backup" option in toolbar menu
+
 - GUI polish
 - Better readme
 - "Restore from backup" option in toolbar menu
 
-## Would be nice, but ehh...
+## Long term goals (would be nice, but ehhh...)
+- Cosmetic overclock support
 - Assignment support
 - Character loadout support
 - Perk support
