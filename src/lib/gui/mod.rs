@@ -14,3 +14,10 @@ pub fn add_singleline_textedit_with_validator<T>(ui:&mut egui::Ui, validator: &m
         };
     });
 }
+
+
+#[cfg(test)]
+mod tests {
+    //unit tests
+    
+}

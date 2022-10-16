@@ -5,3 +5,9 @@ use super::Save;
 pub fn deserialize(sav_file_path: &std::path::PathBuf) -> Save {
     todo!();
 }
+
+
+#[cfg(test)]
+mod tests {
+    //unit tests
+}

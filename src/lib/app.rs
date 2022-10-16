@@ -265,7 +265,7 @@ impl eframe::App for Application {
             });
         });
 
-        egui::SidePanel::right("right_panel").show(ctx, |ui| {
+        egui::SidePanel::right("right_panel").show(ctx, |_ui| {
             //right panel, contains the list of 'Aquired but unforged' OC's
             todo!();
         });
@@ -441,4 +441,10 @@ impl OcFilter {
             OcFilter::Unacquired => "Unaquired",
         });
     }
+}
+
+
+#[cfg(test)]
+mod tests {
+    //unit tests
 }

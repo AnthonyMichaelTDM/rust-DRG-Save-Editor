@@ -70,3 +70,35 @@ impl<T> TextBuffer for ValText<T> {
         self.val = (self.validator)(&self.text);
     }
 }
+
+
+#[cfg(test)]
+mod tests {
+    use egui::TextBuffer;
+
+    use super::ValText;
+
+    //unit tests
+    #[test]
+    fn test_valid_input() {
+        let mut validator = ValText::<usize>::default();
+        validator.insert_text("10", 0);
+        assert!(validator.is_valid());
+        assert!(validator.val == Some(10));
+    }
+    #[test]
+    fn test_invalid_numeric_input() {
+        let mut validator = ValText::<usize>::default();
+        validator.insert_text("-10", 0);
+        assert!(!validator.is_valid());
+        assert!(validator.val == None);
+    }
+    
+    #[test]
+    fn test_invalid_text_input() {
+        let mut validator = ValText::<usize>::default();
+        validator.insert_text("I'm not a number", 0);
+        assert!(!validator.is_valid());
+        assert!(validator.val == None);
+    }
+}
