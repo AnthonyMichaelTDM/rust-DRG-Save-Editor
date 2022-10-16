@@ -265,8 +265,21 @@ impl eframe::App for Application {
             });
         });
 
-        egui::SidePanel::right("right_panel").show(ctx, |_ui| {
+        egui::SidePanel::right("right_panel").show(ctx, |ui| {
             //right panel, contains the list of 'Aquired but unforged' OC's
+            ui.heading("Aquired but unforged");
+            
+            // add a scrollable area for OCs
+            egui::ScrollArea::vertical().id_source("aquired but unforged ocs").show(ui, |ui| {
+                //iterate through the unforged OC's in the users save file, for each of them add a checkbox item that, 
+                //when toggled, toggles the selected value of the associated Overclock object
+                for unaquired_ocs in weapon_ocs.classes_mut().iter_mut().flat_map(|c| c.weapons.iter_mut()).flat_map(|w|w.overclocks.iter_mut()).filter(|oc| oc.status().to_owned() == resources::weapon_overclocks::OcStatus::Unforged) {
+
+                }
+            });
+
+            // add the buttons
+
             todo!();
         });
         
@@ -367,7 +380,7 @@ impl eframe::App for Application {
                                         ui.with_layout(egui::Layout::top_down(egui::Align::RIGHT), |ui| {
                                             ui.horizontal_wrapped(|ui| {
                                                 ui.label(&overclock.guid);
-                                                ui.label(&overclock.status());
+                                                ui.label(&overclock.status_string());
                                             });
                                         });
                                     });

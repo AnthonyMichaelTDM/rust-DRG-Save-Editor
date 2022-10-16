@@ -16,6 +16,14 @@ pub struct DeserializedWeaponOverclockTOML {
     pub gunner: Class,
     pub scout: Class,
 }
+impl DeserializedWeaponOverclockTOML {
+    pub fn classes(&self) -> Vec<&Class> {
+        vec![&self.driller,&self.engineer,&self.gunner,&self.scout]
+    }
+    pub fn classes_mut(&mut self) -> Vec<&mut Class> {
+        vec![&mut self.driller,&mut self.engineer,&mut self.gunner,&mut self.scout]
+    }
+}
 #[derive(Serialize,Deserialize, Clone)]
 pub struct Class {
     pub name: String,
@@ -39,12 +47,23 @@ pub struct Overclock {
     #[serde(skip)]
     pub selected: bool,
     #[serde(skip)]
-    status: OcStatus,
+    curr_status: OcStatus,
+    #[serde(skip)]
+    orig_status: OcStatus,
 }
 impl Overclock {
-    pub fn status(&self) -> String {
-        self.status.string()
+    /// return the string form of this Overclocks status
+    pub fn status_string(&self) -> String {
+        self.curr_status.string()
     }
+    /// return a reference to this Overclocks status
+    pub fn status(&self) -> &OcStatus {&self.curr_status}
+    /// return a mutable reference to this Overclocks status
+    pub fn status_mut(&mut self) -> &mut OcStatus {&mut self.curr_status}
+    /// return a copy of the original status
+    pub fn orig_status(&self) -> OcStatus {self.orig_status.clone()}
+    /// override this Overclocks status with a new status
+    pub fn set_status(&mut self, status: OcStatus) {self.curr_status.set_status(status);}
 }
 
 #[derive(Serialize,Deserialize, Clone)]
@@ -58,22 +77,22 @@ pub struct Cost {
     pub umanite: usize,
 }
 
-#[derive(Clone)]
-enum OcStatus {
-    #[allow(dead_code)]
+#[derive(Clone, PartialEq)]
+pub enum OcStatus {
     Forged,
-    #[allow(dead_code)]
     Unforged,
-    #[allow(dead_code)]
     Unacquired,
 }
 impl OcStatus {
-    fn string(&self) -> String {
+    pub fn string(&self) -> String {
         match self {
             OcStatus::Forged =>     String::from("Forged   "),
             OcStatus::Unforged =>   String::from("Unforged "),
             OcStatus::Unacquired => String::from("Unaquired"),
         }
+    }
+    pub fn set_status(&mut self, status: OcStatus) {
+        *self = status;
     }
 }
 impl Default for OcStatus {
@@ -110,19 +129,12 @@ mod tests {
     }
     #[test]
     /// ensure every class has 6 weapons
-    fn parsing_weapon_oc_toml_all_weapons() {
-        let classes = get_weapon_overclocks();
-        let classes = vec![&classes.driller,&classes.engineer,&classes.gunner,&classes.scout];
-        assert!(classes.iter().map(|c| c.weapons.iter()).all(|w| w.len()==NUM_WEAPONS_PER_CLASS));
-    }
+    fn parsing_weapon_oc_toml_all_weapons() { assert!(get_weapon_overclocks().classes().iter().map(|c| c.weapons.iter()).all(|w| w.len()==NUM_WEAPONS_PER_CLASS));}
     #[test]
     /// ensure there are no duplicate OC guids
     fn parsing_weapon_oc_toml_no_duplicate_weapon_oc_guids() {
-        let classes = get_weapon_overclocks();
-        let classes = vec![&classes.driller,&classes.engineer,&classes.gunner,&classes.scout];
-        
         //get a list of the OCs
-        let oc_vec:Vec<String> = classes.iter() // all the classes
+        let oc_vec:Vec<String> = get_weapon_overclocks().classes().iter() // all the classes
             .flat_map(|c| c.weapons.iter()) // all the weapons
             .flat_map(|w| w.overclocks.iter()) //all the overclocks
             .map(|oc| oc.guid.clone()) //the GUIDs of all the overclocks
